@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow post-conversion and utility pages
+Disallow: /thank-you
+
+# Sitemap location
+Sitemap: https://weatherguardcoating.ca/sitemap.xml
