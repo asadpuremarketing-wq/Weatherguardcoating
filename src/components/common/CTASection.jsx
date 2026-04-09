@@ -1,4 +1,4 @@
-﻿import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Phone, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils';
@@ -54,10 +54,9 @@ export default function CTASection({
           {/* Title */}
           <h2
             className={cn(
-              'font-extrabold mb-4 leading-[1.1] tracking-tight',
+              'font-extrabold mb-4 leading-[1.1] tracking-tight text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem]',
               dark ? 'text-white' : 'text-charcoal'
             )}
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
           >
             {title}
           </h2>

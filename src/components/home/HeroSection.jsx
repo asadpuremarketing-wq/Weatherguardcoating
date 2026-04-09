@@ -33,7 +33,7 @@ const itemVariants = {
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-charcoal overflow-hidden min-h-screen flex items-center"
+      className="relative bg-charcoal overflow-hidden flex items-center"
       aria-label="Hero"
     >
       {/* Background, gradient + subtle texture */}
@@ -46,8 +46,8 @@ export default function HeroSection() {
         style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)' }}
       />
 
-      <div className="container-custom pt-24 pb-36 md:py-36 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-20 items-center">
+      <div className="container-custom pt-20 pb-8 md:pt-28 md:pb-24 lg:py-36 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-start">
 
           {/* ── LEFT column ── */}
           <motion.div
@@ -76,8 +76,7 @@ export default function HeroSection() {
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="font-extrabold text-white leading-[1.06] tracking-tight mb-5"
-              style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4rem)' }}
+              className="font-extrabold text-white leading-[1.1] tracking-tight mb-4 text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[3.8rem]"
             >
               Painting Done Right
               <br />
@@ -113,11 +112,12 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* ── RIGHT column, lead form ── */}
+          {/* RIGHT column — lead form. Extra bottom padding on mobile for CTA bar clearance */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className="pb-24 lg:pb-0"
           >
             <LeadForm />
           </motion.div>

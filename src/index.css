@@ -14,6 +14,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   body {
@@ -138,11 +139,13 @@
   }
 
   .section-title {
-    @apply text-[2rem] md:text-[2.5rem] font-extrabold text-charcoal leading-[1.12] tracking-tight;
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+    @apply font-extrabold text-charcoal leading-[1.12] tracking-tight;
   }
 
   .section-title-light {
-    @apply text-[2rem] md:text-[2.5rem] font-extrabold text-white leading-[1.12] tracking-tight;
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+    @apply font-extrabold text-white leading-[1.12] tracking-tight;
   }
 
   .body-large {
