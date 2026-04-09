@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { CheckCircle, MapPin, Shield, Clock } from 'lucide-react';
 import HeroVideo from '../common/HeroVideo';
 import LeadForm from '../common/LeadForm';
@@ -46,8 +46,8 @@ export default function HeroSection() {
         style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)' }}
       />
 
-      <div className="container-custom py-28 md:py-36 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 xl:gap-20 items-center">
+      <div className="container-custom pt-24 pb-36 md:py-36 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-20 items-center">
 
           {/* ── LEFT column ── */}
           <motion.div
@@ -107,8 +107,8 @@ export default function HeroSection() {
               ))}
             </motion.ul>
 
-            {/* Video */}
-            <motion.div variants={itemVariants}>
+            {/* Video — hidden on mobile to keep hero compact */}
+            <motion.div variants={itemVariants} className="hidden md:block">
               <HeroVideo />
             </motion.div>
           </motion.div>

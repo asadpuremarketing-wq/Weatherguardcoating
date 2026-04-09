@@ -20,6 +20,7 @@
     @apply font-sans text-charcoal bg-white;
     font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -101,7 +102,12 @@
   }
 
   .container-custom {
-    @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-10;
+    @apply max-w-7xl mx-auto px-4 sm:px-8 lg:px-10;
+  }
+
+  /* Global bottom clearance for the fixed mobile CTA bar */
+  .page-content {
+    @apply pb-20 lg:pb-0;
   }
 
   /* ─── Cards ────────────────────────────────────────────────────── */
