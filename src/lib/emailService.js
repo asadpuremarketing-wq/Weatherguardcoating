@@ -1,10 +1,9 @@
 /**
- * Email Service - powered by Google Apps Script (completely free, uses your existing Gmail)
+ * Email Service - routes through Vercel serverless function /api/send-email
  *
- * Local dev:  set VITE_GOOGLE_SCRIPT_URL in .env
- * Vercel:     add VITE_GOOGLE_SCRIPT_URL in Project Settings > Environment Variables
+ * Local dev:  the /api/send-email function runs via `vercel dev`
+ * Vercel:     add GOOGLE_SCRIPT_URL in Project Settings > Environment Variables
  */
-const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
 const SERVICE_LABELS = {
   residential: 'Residential Painting',
@@ -15,8 +14,8 @@ const SERVICE_LABELS = {
 };
 
 /**
- * Sends both emails (business notification + customer confirmation)
- * by calling the Google Apps Script web app.
+ * Sends form data to the Vercel API route, which forwards it to Google Apps Script.
+ * The Google Script URL never touches the browser.
  */
 export async function sendFormEmails(data) {
   const payload = {
@@ -27,16 +26,18 @@ export async function sendFormEmails(data) {
     message: data.message || '(no details provided)',
   };
 
-  // mode: 'no-cors' is required for Google Apps Script cross-origin requests.
-  // The script still fully executes and sends both emails — we just can't read
-  // the response body (opaque response), which is fine for our use case.
-  await fetch(GOOGLE_SCRIPT_URL, {
+  const res = await fetch('/api/send-email', {
     method: 'POST',
-    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   });
+
+  if (!res.ok) {
+    throw new Error('Failed to send email');
+  }
+
+  return res.json();
 }
 
-// No-op — EmailJS is no longer used, kept so main.jsx import doesn't break
+// No-op — EmailJS is no longer used, kept so main.jsx import does not break
 export function initEmailJS() {}
