@@ -3,7 +3,7 @@ import { Phone, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils';
 
-const PHONE = '(519) 555-0192';
+const PHONE = '+12264481189';
 const PHONE_HREF = 'tel:+15195550192';
 
 /**

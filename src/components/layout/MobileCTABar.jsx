@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const PHONE_HREF = 'tel:+15195550192';
-const PHONE_DISPLAY = '(519) 555-0192';
+const PHONE_DISPLAY = '+12264481189';
 
 /**
  * Sticky mobile CTA bar — fixed at bottom on small screens.

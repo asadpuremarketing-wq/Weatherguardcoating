@@ -147,7 +147,7 @@ export default async function handler(req, res) {
             <table width="100%" cellpadding="0" cellspacing="0" style="background:#fffbee;border:1px solid #e8d87a;border-radius:8px;padding:20px;">
               <tr>
                 <td style="padding:6px 20px;">
-                  <p style="margin:0 0 8px;color:#555;font-size:13px;"><strong>Phone:</strong> (519) 555-0192</p>
+                  <p style="margin:0 0 8px;color:#555;font-size:13px;"><strong>Phone:</strong> +12264481189</p>
                   <p style="margin:0 0 8px;color:#555;font-size:13px;"><strong>Email:</strong> ${GMAIL_USER}</p>
                   <p style="margin:0;color:#555;font-size:13px;"><strong>Hours:</strong> Mon-Fri 7am-5pm - Sat 8am-2pm</p>
                 </td>

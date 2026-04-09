@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';
 import { sendFormEmails } from '../../lib/emailService';
 
-const PHONE = '(519) 555-0192';
+const PHONE = '+12264481189';
 const PHONE_HREF = 'tel:+15195550192';
 
 // ── Validation Schema ────────────────────────────────────────────────
@@ -34,8 +34,8 @@ const serviceOptions = [
 
 const trustItems = [
   { icon: CheckCircle, label: 'No obligation' },
-  { icon: Zap,         label: 'Fast response' },
-  { icon: Lock,        label: 'Your info stays private' },
+  { icon: Zap, label: 'Fast response' },
+  { icon: Lock, label: 'Your info stays private' },
 ];
 
 // ── Individual field wrapper ─────────────────────────────────────────

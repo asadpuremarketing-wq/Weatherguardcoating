@@ -98,22 +98,22 @@ export default function WhyUs() {
             </motion.div>
           ))}
 
-          </div>
-
-          {/* ── CTA ── */}
-          <div className="text-center mt-14">
-            <a href="/contact" className="btn-primary text-base px-9 py-4 inline-flex">
-              Get a Free Quote, No Obligation
-            </a>
-            <p className="text-gray-600 text-xs mt-4">
-              Prefer to talk first?{' '}
-              <a href="tel:+15195550192" className="text-gold font-semibold hover:underline">
-                Call (519) 555-0192
-              </a>{' '}
-             , we're happy to answer your questions.
-            </p>
-          </div>
         </div>
+
+        {/* ── CTA ── */}
+        <div className="text-center mt-14">
+          <a href="/contact" className="btn-primary text-base px-9 py-4 inline-flex">
+            Get a Free Quote, No Obligation
+          </a>
+          <p className="text-gray-600 text-xs mt-4">
+            Prefer to talk first?{' '}
+            <a href="tel:+15195550192" className="text-gold font-semibold hover:underline">
+              Call +12264481189
+            </a>{' '}
+            , we're happy to answer your questions.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
