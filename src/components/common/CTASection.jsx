@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Phone, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils';
+import { gtagReportCallConversion } from '../../lib/gtag';
 
 const PHONE = '+12264481189';
 const PHONE_HREF = 'tel:+12264481189';
@@ -86,6 +87,7 @@ export default function CTASection({
             <a
               href={PHONE_HREF}
               id="final-cta-call"
+              onClick={() => gtagReportCallConversion(PHONE_HREF)}
               className={cn(
                 'inline-flex items-center gap-2.5 font-bold text-base px-9 py-4 rounded-xl border-2 transition-all duration-200 w-full sm:w-auto justify-center',
                 dark
@@ -101,7 +103,7 @@ export default function CTASection({
           {/* Prefer to call micro-CTA */}
           <p className={cn('text-sm mb-8', dark ? 'text-gray-500' : 'text-gray-500')}>
             Prefer to talk first?{' '}
-            <a href={PHONE_HREF} className="text-gold font-semibold hover:underline">
+            <a href={PHONE_HREF} className="text-gold font-semibold hover:underline" onClick={() => gtagReportCallConversion(PHONE_HREF)}>
               Call us directly
             </a>{' '}
             we are ready to help.

@@ -1,7 +1,8 @@
-﻿import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '../../lib/utils';
+import { gtagReportCallConversion } from '../../lib/gtag';
 
 const PHONE = '(226) 448-1189';
 const PHONE_HREF = 'tel:+12264481189';
@@ -66,6 +67,7 @@ export default function Header() {
             href={PHONE_HREF}
             className="flex items-center gap-2 font-bold text-sm hover:text-gold-light transition-colors group"
             aria-label={`Call us at ${PHONE}`}
+            onClick={() => gtagReportCallConversion(PHONE_HREF)}
           >
             <div className="w-6 h-6 bg-gold/20 rounded-full flex items-center justify-center">
               <Phone size={12} className="text-gold" />
@@ -165,6 +167,7 @@ export default function Header() {
             <a
               href={PHONE_HREF}
               className="flex items-center gap-2 text-charcoal/80 font-semibold text-sm hover:text-gold transition-colors duration-200"
+              onClick={() => gtagReportCallConversion(PHONE_HREF)}
             >
               <Phone size={15} />
               {PHONE}
@@ -231,6 +234,7 @@ export default function Header() {
               <a
                 href={PHONE_HREF}
                 className="btn-secondary text-sm w-full text-center"
+                onClick={() => gtagReportCallConversion(PHONE_HREF)}
               >
                 <Phone size={15} />
                 Call {PHONE}

@@ -1,4 +1,4 @@
-﻿import { useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
@@ -7,6 +7,7 @@ import { Phone, Send, Loader2, User, PhoneCall, Mail, ChevronDown, CheckCircle, 
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';
 import { sendFormEmails } from '../../lib/emailService';
+import { gtagReportCallConversion, gtagReportFormConversion } from '../../lib/gtag';
 
 const PHONE = '+12264481189';
 const PHONE_HREF = 'tel:+15195550192';
@@ -94,6 +95,7 @@ export default function LeadForm({ className, compact = false }) {
     setSubmitError(null);
     try {
       await sendFormEmails(data);
+      gtagReportFormConversion(); // Google Ads: lead form conversion
       reset();
       setSubmitted(true);
     } catch (err) {
@@ -128,6 +130,7 @@ export default function LeadForm({ className, compact = false }) {
         <a
           href={PHONE_HREF}
           className="btn-primary w-full justify-center mb-4"
+          onClick={() => gtagReportCallConversion(PHONE_HREF)}
         >
           <Phone size={16} />
           Call Us Now: {PHONE}
@@ -293,6 +296,7 @@ export default function LeadForm({ className, compact = false }) {
           href={PHONE_HREF}
           className="flex items-center justify-center gap-2 text-charcoal font-bold text-sm py-3 rounded-xl border border-gray-200 hover:border-gold hover:text-gold transition-all duration-200"
           id="form-call-cta"
+          onClick={() => gtagReportCallConversion(PHONE_HREF)}
         >
           <Phone size={15} />
           {PHONE}, We're ready to help

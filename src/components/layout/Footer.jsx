@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Globe, Share2, ExternalLink } from 'lucide-react';
+import { gtagReportCallConversion } from '../../lib/gtag';
 
 const PHONE = '(226) 448-1189';
 const PHONE_HREF = 'tel:+12264481189';
@@ -115,7 +116,7 @@ export default function Footer() {
             <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li>
-                <a href={PHONE_HREF} className="flex items-start gap-3 text-gray-400 hover:text-gold transition-colors group">
+                <a href={PHONE_HREF} className="flex items-start gap-3 text-gray-400 hover:text-gold transition-colors group" onClick={() => gtagReportCallConversion(PHONE_HREF)}>
                   <Phone size={15} className="mt-0.5 shrink-0 group-hover:text-gold" />
                   <span className="text-sm">{PHONE}</span>
                 </a>

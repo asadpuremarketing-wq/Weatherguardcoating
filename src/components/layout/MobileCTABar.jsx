@@ -1,6 +1,7 @@
 import { Phone, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { gtagReportCallConversion } from '../../lib/gtag';
 
 const PHONE_HREF = 'tel:+15195550192';
 const PHONE_DISPLAY = '+12264481189';
@@ -30,6 +31,7 @@ export default function MobileCTABar() {
           id="mobile-cta-call"
           className="flex-1 flex flex-col items-center justify-center gap-0.5 py-3.5 text-charcoal hover:bg-gray-50 transition-colors active:bg-gray-100"
           aria-label={`Call ${PHONE_DISPLAY}`}
+          onClick={() => gtagReportCallConversion(PHONE_HREF)}
         >
           <Phone size={20} className="text-charcoal" />
           <span className="text-[11px] font-bold tracking-wide text-charcoal">Call Now</span>
