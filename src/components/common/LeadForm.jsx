@@ -93,9 +93,13 @@ export default function LeadForm({ className, compact = false }) {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     setSubmitError(null);
+
+    // Fire Google Ads conversion immediately on valid submit — do NOT wait
+    // for the email to send, otherwise the event can be dropped.
+    gtagReportFormConversion();
+
     try {
       await sendFormEmails(data);
-      gtagReportFormConversion(); // Google Ads: lead form conversion
       reset();
       setSubmitted(true);
     } catch (err) {

@@ -31,14 +31,21 @@ export function gtagReportCallConversion(url) {
 
 /**
  * Lead-form submission conversion.
- * Call once after a successful form send.
+ * Fires immediately on form submit.
+ * @param {Function} [onDone] - optional callback fired after gtag confirms the hit
  */
-export function gtagReportFormConversion() {
+export function gtagReportFormConversion(onDone) {
+  const callback = typeof onDone === 'function' ? onDone : function () {};
+
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'conversion', {
       send_to: 'AW-313955898/Hfa6CNvAzZ4cELqs2pUB',
       value: 1.0,
       currency: 'CAD',
+      event_callback: callback,
     });
+  } else {
+    // gtag not loaded yet — fire callback immediately so UX isn't blocked
+    callback();
   }
 }
