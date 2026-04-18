@@ -106,8 +106,8 @@ export default function HeroSection() {
               ))}
             </motion.ul>
 
-            {/* Video — hidden on mobile to keep hero compact */}
-            <motion.div variants={itemVariants} className="hidden md:block">
+            {/* Video — visible on all devices now */}
+            <motion.div variants={itemVariants} className="mt-8 lg:mt-0">
               <HeroVideo />
             </motion.div>
           </motion.div>

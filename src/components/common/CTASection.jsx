@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils';
 
 const PHONE = '+12264481189';
-const PHONE_HREF = 'tel:+15195550192';
+const PHONE_HREF = 'tel:+12264481189';
 
 /**
  * CRO-optimized CTA section, direct, action-oriented, both contact paths.
