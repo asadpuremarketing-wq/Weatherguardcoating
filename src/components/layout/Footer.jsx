@@ -5,6 +5,26 @@ import { gtagReportCallConversion } from '../../lib/gtag';
 const PHONE = '(226) 448-1189';
 const PHONE_HREF = 'tel:+12264481189';
 const EMAIL = 'WeatherGuardcoating@gmail.com';
+const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61574512059845';
+const INSTAGRAM_URL = 'https://www.instagram.com/weatherguardcoating/';
+
+// lucide-react dropped brand icons — small inline SVGs instead
+function FacebookIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" width={16} height={16} {...props}>
+      <path d="M13.5 21v-7.5h2.5l.5-3H13.5V8.5c0-.9.25-1.5 1.55-1.5H16.5V4.3C16.2 4.26 15.2 4.17 14 4.17c-2.4 0-4 1.46-4 4.15V10.5H7.5v3H10V21h3.5z" />
+    </svg>
+  );
+}
+function InstagramIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width={16} height={16} {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 const footerLinks = {
   services: [
@@ -57,6 +77,27 @@ export default function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
               Serving Southwestern Ontario for over 35 years. Professional painting and coatings for residential, commercial, farm, and industrial properties.
             </p>
+            {/* Social links */}
+            <div className="flex items-center gap-3">
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Weather Guard Coating on Facebook"
+                className="w-9 h-9 bg-charcoal-light rounded-lg flex items-center justify-center text-gray-400 hover:text-gold hover:bg-charcoal-muted transition-colors"
+              >
+                <FacebookIcon />
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Weather Guard Coating on Instagram"
+                className="w-9 h-9 bg-charcoal-light rounded-lg flex items-center justify-center text-gray-400 hover:text-gold hover:bg-charcoal-muted transition-colors"
+              >
+                <InstagramIcon />
+              </a>
+            </div>
           </div>
 
           {/* Services column */}

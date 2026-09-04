@@ -98,6 +98,8 @@ export default function LocalBusinessSchema() {
     },
     sameAs: [
       'https://www.google.com/maps/place/Weather+Guard+Coating',
+      'https://www.facebook.com/profile.php?id=61574512059845',
+      'https://www.instagram.com/weatherguardcoating/',
     ],
   };
 
