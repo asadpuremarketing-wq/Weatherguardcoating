@@ -184,7 +184,7 @@ export default function BlogPost() {
   return (
     <>
       <Helmet>
-        <title>{post.title} | Weather Guard Coating</title>
+        <title>{post.title}</title>
         <meta name="description" content={post.excerpt} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/blog/${post.slug}`} />
@@ -195,9 +195,9 @@ export default function BlogPost() {
         <meta property="og:image" content={`${BASE_URL}${post.image}`} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:author" content="Weather Guard Coating" />
-        {post.keywords?.map((kw) => (
-          <meta key={kw} name="keywords" content={kw} />
-        ))}
+        {post.keywords?.length > 0 && (
+          <meta name="keywords" content={post.keywords.join(', ')} />
+        )}
       </Helmet>
 
       <ArticleSchema post={post} />
@@ -248,12 +248,8 @@ export default function BlogPost() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 className="lg:col-span-2"
-                itemScope
-                itemType="https://schema.org/BlogPosting"
               >
-                <meta itemProp="headline" content={post.title} />
-                <meta itemProp="datePublished" content={post.date} />
-                <div itemProp="articleBody">
+                <div>
                   {renderContent(post.content)}
                 </div>
 

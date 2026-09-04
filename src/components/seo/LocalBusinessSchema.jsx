@@ -53,7 +53,7 @@ export default function LocalBusinessSchema() {
       'Weather Guard Coating is a trusted painting contractor in London, Ontario with 35+ years of experience. We offer residential painting, commercial painting, farm & agricultural painting, and roof coating services across Southwestern Ontario.',
     foundingDate: BUSINESS.foundingYear,
     priceRange: BUSINESS.priceRange,
-    logo: `${BUSINESS.url}/favicon.svg`,
+    logo: `${BUSINESS.url}/icon-512.png`,
     image: `${BUSINESS.url}/images/hero-video-thumbnail.jpg`,
     address: {
       '@type': 'PostalAddress',

@@ -15,6 +15,7 @@ export default function ServiceSchema({ service }) {
     image: `https://weatherguardcoating.ca${service.image}`,
     provider: {
       '@type': 'LocalBusiness',
+      '@id': 'https://weatherguardcoating.ca/#business',
       name: 'Weather Guard Coating',
       url: 'https://weatherguardcoating.ca',
       telephone: '+12264481189',
@@ -30,12 +31,6 @@ export default function ServiceSchema({ service }) {
     areaServed: {
       '@type': 'State',
       name: 'Ontario, Canada',
-    },
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'CAD',
-      description: 'Free estimate, no obligation',
     },
   };
 

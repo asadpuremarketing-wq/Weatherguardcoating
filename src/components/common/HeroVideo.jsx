@@ -37,6 +37,8 @@ export default function HeroVideo() {
         src="/images/hero-video-thumbnail.jpg"
         alt="Weather Guard Coatings team at work"
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        fetchPriority="high"
+        loading="eager"
       />
 
       {/* Gradient overlay, heavier at bottom for text legibility */}

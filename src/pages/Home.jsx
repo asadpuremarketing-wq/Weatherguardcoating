@@ -21,12 +21,12 @@ export default function Home() {
         <title>Painting Contractor London Ontario | Weather Guard Coating</title>
         <meta
           name="description"
-          content="Weather Guard Coating, London Ontario's trusted painting contractor since 1989. Residential, commercial, farm & roof coating. Fully insured, WSIB compliant. Free estimates. Call (226) 448-1189."
+          content="London Ontario's trusted painting contractor since 1989. Residential, commercial, farm & roof coating. Fully insured, free estimates."
         />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BASE_URL}/`} />
         <meta property="og:title" content="Painting Contractor London Ontario | Weather Guard Coating" />
-        <meta property="og:description" content="Trusted painting contractor in London, Ontario since 1989. Residential, commercial, farm & roof coating. Free estimates, call (226) 448-1189." />
+        <meta property="og:description" content="Trusted painting contractor in London, Ontario since 1989. Residential, commercial, farm & roof coating." />
         <meta property="og:url" content={`${BASE_URL}/`} />
         <meta property="og:image" content={`${BASE_URL}/images/hero-video-thumbnail.jpg`} />
         <meta property="og:type" content="website" />

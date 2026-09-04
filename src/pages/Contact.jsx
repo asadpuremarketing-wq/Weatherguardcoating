@@ -13,10 +13,10 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact a Painting Contractor in London, Ontario | Free Estimate | Weather Guard Coating</title>
+        <title>Contact Weather Guard Coating | Free Estimate</title>
         <meta
           name="description"
-          content="Contact Weather Guard Coating in London, Ontario for a free painting estimate. Call (226) 448-1189, email us, or fill out the form. Serving London and 160km radius. Fast 24-hour response."
+          content="Get a free painting estimate from Weather Guard Coating in London, Ontario. Call or request a quote online."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/contact`} />

@@ -11,10 +11,10 @@ export default function Services() {
   return (
     <>
       <Helmet>
-        <title>Painting Services London Ontario | Residential, Commercial & Farm | Weather Guard Coating</title>
+        <title>Painting Services London Ontario | Weather Guard Coating</title>
         <meta
           name="description"
-          content="Professional residential, commercial, farm & roof coating services in London, Ontario. 35+ years experience, WSIB insured, free written estimates. Serving 160km radius from London."
+          content="Painting services across London Ontario: residential, commercial, farm & roof coating. 35+ years experience, free estimates."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/services`} />

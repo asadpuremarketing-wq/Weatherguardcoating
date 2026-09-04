@@ -10,6 +10,7 @@ export const services = [
     fullDesc: 'Your home deserves expert care. We deliver premium interior and exterior residential painting with careful prep work, quality materials, and clean, professional execution every time.',
     icon: '🏠',
     image: '/images/service-residential.jpg',
+    imageAlt: 'Freshly painted residential home exterior in London, Ontario',
     features: [
       'Interior & Exterior',
       'Full Surface Preparation',
@@ -37,6 +38,7 @@ export const services = [
     fullDesc: 'We handle commercial projects of all sizes, from office buildings to retail spaces, with minimal disruption to your business operations. Night and weekend scheduling available.',
     icon: '🏢',
     image: '/images/service-commercial.jpg',
+    imageAlt: 'Painted commercial office building in London, Ontario',
     features: [
       'Day, Night & Weekend Scheduling',
       'Project Management Included',
@@ -64,6 +66,7 @@ export const services = [
     fullDesc: 'Farming structures face harsh conditions year-round. Our agricultural coatings are chosen for maximum durability, UV resistance, and weatherproofing to protect your investment for years.',
     icon: '🌾',
     image: '/images/service-farm.jpg',
+    imageAlt: 'Freshly coated barn and farm outbuilding in rural Ontario',
     features: [
       'Barn & Silo Painting',
       'UV & Weather-Resistant Coatings',
@@ -91,6 +94,7 @@ export const services = [
     fullDesc: 'Our elastomeric and reflective roof coatings protect flat and low-slope roofs from water infiltration, UV damage, and thermal expansion, extending roof life by 10 to 15 years.',
     icon: '🏗️',
     image: '/images/service-roof.jpg',
+    imageAlt: 'Flat commercial roof with elastomeric coating applied',
     features: [
       'Flat & Low-Slope Roofs',
       'Elastomeric Waterproof Coatings',

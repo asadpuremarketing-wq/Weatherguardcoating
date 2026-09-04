@@ -9,6 +9,7 @@ export default function ReviewSchema({ reviews }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': 'https://weatherguardcoating.ca/#business',
     name: 'Weather Guard Coating',
     url: 'https://weatherguardcoating.ca',
     review: (reviews || []).slice(0, 5).map((r) => ({

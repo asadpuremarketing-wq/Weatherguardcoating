@@ -61,14 +61,14 @@ export default function ServiceDetail() {
   return (
     <>
       <Helmet>
-        <title>{service.title} in London, Ontario | Weather Guard Coating</title>
+        <title>{service.title} London ON | Weather Guard Coating</title>
         <meta
           name="description"
-          content={`${service.shortDesc} Serving London, Ontario and surrounding areas for 35+ years. Fully insured, WSIB compliant. Free estimate, call (226) 448-1189.`}
+          content={`${service.shortDesc} Serving London, ON. Free estimates, fully insured.`}
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/services/${service.slug}`} />
-        <meta property="og:title" content={`${service.title} in London, Ontario | Weather Guard Coating`} />
+        <meta property="og:title" content={`${service.title} London ON | Weather Guard Coating`} />
         <meta property="og:description" content={service.shortDesc} />
         <meta property="og:url" content={`${BASE_URL}/services/${service.slug}`} />
         <meta property="og:image" content={`${BASE_URL}${service.image}`} />
@@ -187,7 +187,7 @@ export default function ServiceDetail() {
               <div className="rounded-2xl overflow-hidden shadow-card-hover">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={service.imageAlt || service.title}
                   className="w-full h-72 object-cover"
                   loading="lazy"
                 />

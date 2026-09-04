@@ -32,7 +32,7 @@ export default function About() {
         <title>About Weather Guard Coating | 35+ Years in London, Ontario</title>
         <meta
           name="description"
-          content="Founded in 1989 in London, Ontario, Weather Guard Coating has grown to one of Southwestern Ontario's most trusted painting contractors. Learn our story, our team, and our values."
+          content="Founded in 1989, Weather Guard Coating is one of Southwestern Ontario's most trusted painting contractors."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/about`} />
@@ -74,7 +74,7 @@ export default function About() {
               >
                 <img
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                  alt="Weather Guard Coatings team"
+                  alt="Professional painting crew reviewing a project"
                   className="w-full h-80 object-cover"
                   loading="lazy"
                 />

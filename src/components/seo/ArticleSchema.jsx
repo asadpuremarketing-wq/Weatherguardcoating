@@ -14,19 +14,21 @@ export default function ArticleSchema({ post }) {
     url: `https://weatherguardcoating.ca/blog/${post.slug}`,
     image: post.image ? `https://weatherguardcoating.ca${post.image}` : `https://weatherguardcoating.ca/images/hero-video-thumbnail.jpg`,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updatedDate || post.date,
     author: {
       '@type': 'Organization',
+      '@id': 'https://weatherguardcoating.ca/#business',
       name: 'Weather Guard Coating',
       url: 'https://weatherguardcoating.ca',
     },
     publisher: {
       '@type': 'Organization',
+      '@id': 'https://weatherguardcoating.ca/#business',
       name: 'Weather Guard Coating',
       url: 'https://weatherguardcoating.ca',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://weatherguardcoating.ca/favicon.svg',
+        url: 'https://weatherguardcoating.ca/icon-512.png',
       },
     },
     mainEntityOfPage: {

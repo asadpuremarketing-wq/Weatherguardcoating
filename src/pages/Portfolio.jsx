@@ -34,10 +34,10 @@ export default function Portfolio() {
   return (
     <>
       <Helmet>
-        <title>Painting Portfolio | London Ontario Projects | Weather Guard Coating</title>
+        <title>Painting Portfolio | Weather Guard Coating</title>
         <meta
           name="description"
-          content="Browse before & after photos of residential, commercial, farm, and roof coating projects completed by Weather Guard Coating across London and Southwestern Ontario."
+          content="Before & after photos of residential, commercial, farm & roof coating projects across London, Ontario."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/portfolio`} />
@@ -165,11 +165,11 @@ export default function Portfolio() {
                 {/* Before/After images */}
                 <div className="grid grid-cols-2 gap-0.5">
                   <div className="relative">
-                    <img src={modalItem.before} alt="Before" className="w-full h-56 object-cover" />
+                    <img src={modalItem.before} alt={`${modalItem.title} — before`} className="w-full h-56 object-cover" />
                     <div className="absolute top-2 left-2 bg-charcoal/80 text-white text-xs font-bold px-2 py-1 rounded">BEFORE</div>
                   </div>
                   <div className="relative">
-                    <img src={modalItem.after} alt="After" className="w-full h-56 object-cover" />
+                    <img src={modalItem.after} alt={`${modalItem.title} — after`} className="w-full h-56 object-cover" />
                     <div className="absolute top-2 right-2 bg-gold text-white text-xs font-bold px-2 py-1 rounded">AFTER</div>
                   </div>
                 </div>

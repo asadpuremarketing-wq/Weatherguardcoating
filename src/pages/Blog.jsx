@@ -20,10 +20,10 @@ export default function Blog() {
   return (
     <>
       <Helmet>
-        <title>Painting Tips & Advice for London, Ontario | Weather Guard Coating Blog</title>
+        <title>Painting Tips & Advice | Weather Guard Coating Blog</title>
         <meta
           name="description"
-          content="Expert painting tips, cost guides, and local advice for London, Ontario homeowners and businesses. From interior painting to roof coatings. Learn from 35+ years of experience."
+          content="Expert painting tips, cost guides, and local advice for London, Ontario homeowners and businesses."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/blog`} />

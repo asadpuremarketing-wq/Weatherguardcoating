@@ -7,7 +7,7 @@ export const blogPosts = [
   {
     slug: 'house-painting-cost-london-ontario',
     title: 'How Much Does House Painting Cost in London, Ontario? (2025 Guide)',
-    excerpt: 'Wondering what house painting costs in London, Ontario? Get real price ranges for interior and exterior painting, what affects costs, and how to get the best value.',
+    excerpt: 'Wondering what house painting costs in London, Ontario? Real price ranges and what affects the final cost.',
     date: '2025-03-15',
     author: 'Weather Guard Coating',
     category: 'Residential',
@@ -217,7 +217,7 @@ Weather Guard Coating handles exterior projects throughout London, ON and surrou
   {
     slug: 'commercial-painting-london-ontario',
     title: 'Commercial Painting in London, Ontario: What Business Owners Need to Know',
-    excerpt: 'Planning a commercial painting project in London, Ontario? Learn what makes commercial painting different, how to minimize business disruption, and what to look for in a contractor.',
+    excerpt: 'Planning a commercial painting project in London, Ontario? What to know before you hire a contractor.',
     date: '2025-01-28',
     author: 'Weather Guard Coating',
     category: 'Commercial',
@@ -335,7 +335,7 @@ We've handled commercial projects in London, Ontario since 1995, from small offi
   {
     slug: 'barn-farm-painting-ontario-winters',
     title: 'Barn & Farm Painting That Survives Ontario Winters, What You Need to Know',
-    excerpt: 'Ontario winters are brutal on farm structures. Learn what coatings actually last, when to paint barns, and how to protect your agricultural investment from weathering and rust.',
+    excerpt: 'Ontario winters are brutal on farm structures. What coatings actually last, and when to paint barns.',
     date: '2025-01-10',
     author: 'Weather Guard Coating',
     category: 'Agricultural',
@@ -453,7 +453,7 @@ We've been painting agricultural structures across London, Strathroy, Woodstock,
   {
     slug: 'flat-roof-coating-vs-replacement-london-on',
     title: 'Flat Roof Coating vs. Replacement in London, Ontario: What\'s Worth It?',
-    excerpt: 'Should you coat or replace your flat roof in London, Ontario? Learn when each option makes sense, what they cost, and how a roof coating can save you thousands.',
+    excerpt: 'Should you coat or replace your flat roof in London, Ontario? When each option makes sense, and what they cost.',
     date: '2024-12-05',
     author: 'Weather Guard Coating',
     category: 'Roof Coating',
@@ -574,7 +574,7 @@ We serve London, ON and all surrounding commercial and industrial properties wit
   {
     slug: 'how-to-choose-painting-contractor-london-ontario',
     title: 'How to Choose a Painting Contractor in London, Ontario (Complete Checklist)',
-    excerpt: 'Not all painting contractors are equal. Use this checklist to find a reliable, insured, quality-focused painter in London, Ontario, and avoid the costly mistakes other homeowners make.',
+    excerpt: 'Not all painting contractors are equal. A checklist for finding a reliable, insured painter in London, Ontario.',
     date: '2024-11-18',
     author: 'Weather Guard Coating',
     category: 'Tips',

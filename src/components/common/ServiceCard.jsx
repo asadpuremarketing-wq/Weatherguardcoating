@@ -7,7 +7,7 @@ import { cn } from '../../lib/utils';
  * Premium service card — image top, content bottom, hover lift + image zoom.
  */
 export default function ServiceCard({ service, className }) {
-  const { slug, title, shortDesc, icon, image, features } = service;
+  const { slug, title, shortDesc, icon, image, imageAlt, features } = service;
 
   return (
     <motion.div
@@ -23,7 +23,7 @@ export default function ServiceCard({ service, className }) {
       <div className="relative h-52 overflow-hidden">
         <img
           src={image}
-          alt={title}
+          alt={imageAlt || title}
           className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-108"
           loading="lazy"
           style={{ '--tw-scale-x': '1.08', '--tw-scale-y': '1.08' }}

@@ -13,10 +13,10 @@ export default function Reviews() {
   return (
     <>
       <Helmet>
-        <title>Customer Reviews | Painting Contractor London Ontario | Weather Guard Coating</title>
+        <title>Customer Reviews | Weather Guard Coating</title>
         <meta
           name="description"
-          content="Read verified reviews of Weather Guard Coating, London Ontario's trusted painting contractor, from homeowners, businesses, and property owners across Southwestern Ontario."
+          content="Read verified Google reviews from Weather Guard Coating clients across London, Ontario."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/reviews`} />
