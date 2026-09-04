@@ -91,9 +91,12 @@ export default function LocalBusinessSchema() {
       name: 'Painting & Coating Services',
       itemListElement: [
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Residential Painting', url: `${BUSINESS.url}/services/residential-painting` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Interior Painting', url: `${BUSINESS.url}/services/interior-painting` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Painting', url: `${BUSINESS.url}/services/commercial-painting` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Farm & Agricultural Painting', url: `${BUSINESS.url}/services/farm-painting` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Barn & Farm Painting', url: `${BUSINESS.url}/services/custom-barn-farm-painting` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Roof Coating', url: `${BUSINESS.url}/services/roof-coating` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Hot Pour Rubber Sealing', url: `${BUSINESS.url}/services/hot-pour-rubber-sealing` } },
       ],
     },
     sameAs: [

@@ -26,9 +26,12 @@ const quoteSchema = z.object({
 const serviceOptions = [
   { value: '', label: 'Select a service...' },
   { value: 'residential', label: 'Residential Painting' },
+  { value: 'interior', label: 'Interior Painting' },
   { value: 'commercial', label: 'Commercial Painting' },
   { value: 'farm', label: 'Farm & Agricultural Painting' },
+  { value: 'barn-farm', label: 'Custom Barn & Farm Painting' },
   { value: 'roof-coating', label: 'Roof Coating' },
+  { value: 'rubber-sealing', label: 'Hot Pour Rubber Sealing' },
   { value: 'other', label: 'Other / Not Sure Yet' },
 ];
 

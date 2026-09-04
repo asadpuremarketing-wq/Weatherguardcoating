@@ -7,10 +7,13 @@ import services from '../../data/services';
 
 // Benefit-driven short descriptions for homepage cards
 const benefitDescs = {
-  'residential-painting': 'Refresh and protect your home with clean, lasting finishes that hold up in Ontario weather.',
-  'commercial-painting':  'Professional results with minimal disruption, on time, on budget, properly insured.',
-  'farm-painting':        'Durable coatings for barns, silos, and farm structures built to outlast harsh Ontario winters.',
-  'roof-coating':         'Stop leaks, cut cooling costs, and extend your roof life, at a fraction of replacement cost.',
+  'residential-painting':          'Refresh and protect your home with clean, lasting finishes that hold up in Ontario weather.',
+  'interior-painting':             'A flawless interior finish delivered on schedule, with your home or business kept clean throughout.',
+  'commercial-painting':           'Professional results with minimal disruption, on time, on budget, properly insured.',
+  'farm-painting':                 'Durable coatings for barns, silos, and farm structures built to outlast harsh Ontario winters.',
+  'custom-barn-farm-painting':     'A coating system specified for your exact barn or outbuilding, not a one-size-fits-all default.',
+  'roof-coating':                  'Stop leaks, cut cooling costs, and extend your roof life, at a fraction of replacement cost.',
+  'hot-pour-rubber-sealing':       'Seal driveway and parking lot cracks before winter turns them into costly repairs.',
 };
 
 // Attach benefit descriptions to service objects for this section

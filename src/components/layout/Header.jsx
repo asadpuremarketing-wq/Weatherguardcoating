@@ -14,9 +14,12 @@ const navLinks = [
     href: '/services',
     children: [
       { label: 'Residential Painting', href: '/services/residential-painting' },
+      { label: 'Interior Painting', href: '/services/interior-painting' },
       { label: 'Commercial Painting', href: '/services/commercial-painting' },
       { label: 'Farm Painting', href: '/services/farm-painting' },
+      { label: 'Custom Barn & Farm Painting', href: '/services/custom-barn-farm-painting' },
       { label: 'Roof Coating', href: '/services/roof-coating' },
+      { label: 'Hot Pour Rubber Sealing', href: '/services/hot-pour-rubber-sealing' },
     ],
   },
   { label: 'Portfolio', href: '/portfolio' },
