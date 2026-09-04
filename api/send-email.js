@@ -7,6 +7,19 @@ import nodemailer from 'nodemailer';
  *   1. Business notification  -> WeatherGuardcoating@gmail.com
  *   2. Customer confirmation  -> visitor's email address
  */
+
+// Form fields are attacker-controlled and interpolated straight into HTML
+// email bodies below — escape them so submitted markup can't break the
+// layout or inject links into the notification/confirmation emails.
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -35,7 +48,11 @@ export default async function handler(req, res) {
   });
 
   const submittedAt = new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto' });
-  const details = message || '(no details provided)';
+  const safeName = escapeHtml(name);
+  const safePhone = escapeHtml(phone);
+  const safeEmail = escapeHtml(email);
+  const safeService = escapeHtml(service);
+  const details = escapeHtml(message || '(no details provided)');
 
   // ── Template 1: Business Notification ────────────────────────────────────────
   const businessHTML = `
@@ -68,19 +85,19 @@ export default async function handler(req, res) {
             <table width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;color:#999;font-size:11px;font-weight:bold;text-transform:uppercase;width:120px;">Name</td>
-                <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;font-size:15px;color:#1a1a1a;font-weight:bold;">${name}</td>
+                <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;font-size:15px;color:#1a1a1a;font-weight:bold;">${safeName}</td>
               </tr>
               <tr>
                 <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;color:#999;font-size:11px;font-weight:bold;text-transform:uppercase;">Phone</td>
-                <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;"><a href="tel:${phone}" style="color:#C9A84C;font-size:15px;text-decoration:none;">${phone}</a></td>
+                <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;"><a href="tel:${safePhone}" style="color:#C9A84C;font-size:15px;text-decoration:none;">${safePhone}</a></td>
               </tr>
               <tr>
                 <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;color:#999;font-size:11px;font-weight:bold;text-transform:uppercase;">Email</td>
-                <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;"><a href="mailto:${email}" style="color:#C9A84C;font-size:15px;text-decoration:none;">${email}</a></td>
+                <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;"><a href="mailto:${safeEmail}" style="color:#C9A84C;font-size:15px;text-decoration:none;">${safeEmail}</a></td>
               </tr>
               <tr>
                 <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;color:#999;font-size:11px;font-weight:bold;text-transform:uppercase;">Service</td>
-                <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;font-size:15px;color:#1a1a1a;">${service}</td>
+                <td style="padding:12px 0;border-bottom:1px solid #f0f0f0;font-size:15px;color:#1a1a1a;">${safeService}</td>
               </tr>
               <tr>
                 <td style="padding:12px 0;color:#999;font-size:11px;font-weight:bold;text-transform:uppercase;vertical-align:top;">Details</td>
@@ -133,9 +150,9 @@ export default async function handler(req, res) {
           <td style="padding:16px 40px 32px;text-align:center;">
             <h2 style="margin:0 0 16px;color:#1a1a1a;font-size:20px;">Request Received!</h2>
             <p style="margin:0 0 24px;color:#555;font-size:15px;line-height:1.8;">
-              Hi <strong>${name}</strong>,<br>
+              Hi <strong>${safeName}</strong>,<br>
               Thank you for reaching out. We have received your quote request for
-              <strong style="color:#C9A84C;">${service}</strong> and our team will be in touch within
+              <strong style="color:#C9A84C;">${safeService}</strong> and our team will be in touch within
               <strong>24 hours</strong>.
             </p>
           </td>
@@ -185,7 +202,7 @@ export default async function handler(req, res) {
       transporter.sendMail({
         from: `"Weather Guard Website" <${GMAIL_USER}>`,
         to: GMAIL_USER,
-        subject: `New Quote Request from ${name}`,
+        subject: `New Quote Request from ${safeName}`,
         html: businessHTML,
       }),
       // Email 2 - Customer
@@ -193,7 +210,7 @@ export default async function handler(req, res) {
         from: `"Weather Guard Coatings" <${GMAIL_USER}>`,
         to: email,
         replyTo: GMAIL_USER,
-        subject: `We Received Your Request - ${name}`,
+        subject: `We Received Your Request - ${safeName}`,
         html: customerHTML,
       }),
     ]);
