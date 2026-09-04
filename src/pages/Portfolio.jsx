@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import portfolioItems, { portfolioCategories } from '../data/portfolio';
 import CTASection from '../components/common/CTASection';
@@ -8,13 +9,23 @@ import { cn } from '../lib/utils';
 import BreadcrumbSchema from '../components/seo/BreadcrumbSchema';
 
 const BASE_URL = 'https://weatherguardcoating.ca';
+const VALID_CATEGORIES = new Set(portfolioCategories.map((c) => c.id));
 
 /**
  * Portfolio page with filterable image grid and modal.
  */
 export default function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const categoryParam = searchParams.get('category');
+  const [activeFilter, setActiveFilter] = useState(
+    VALID_CATEGORIES.has(categoryParam) ? categoryParam : 'all'
+  );
   const [modalItem, setModalItem] = useState(null);
+
+  const setFilter = (id) => {
+    setActiveFilter(id);
+    setSearchParams(id === 'all' ? {} : { category: id });
+  };
 
   const filtered = activeFilter === 'all'
     ? portfolioItems
@@ -64,7 +75,7 @@ export default function Portfolio() {
               {portfolioCategories.map((cat) => (
                 <button
                   key={cat.id}
-                  onClick={() => setActiveFilter(cat.id)}
+                  onClick={() => setFilter(cat.id)}
                   className={cn(
                     'px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200',
                     activeFilter === cat.id

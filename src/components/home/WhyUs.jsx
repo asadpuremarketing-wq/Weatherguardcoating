@@ -1,5 +1,6 @@
 ﻿import { motion } from 'framer-motion';
 import { Shield, Award, Users, Clock, Star, Wrench } from 'lucide-react';
+import Carousel from '../common/Carousel';
 
 const whyItems = [
   {
@@ -29,8 +30,8 @@ const whyItems = [
   },
   {
     icon: Star,
-    title: 'Backed by 127 Reviews',
-    desc: 'A 4.9-star average across 127 Google Reviews. Real clients, real results, see what people are saying.',
+    title: 'Backed by Verified Reviews',
+    desc: 'Real clients sharing real results on Google, see what people are saying about working with us.',
   },
 ];
 
@@ -64,22 +65,22 @@ export default function WhyUs() {
           </p>
         </motion.div>
 
-        {/* ── Grid of cards ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {whyItems.map(({ icon: Icon, title, desc }, i) => (
+        {/* ── Carousel of cards ── */}
+        <Carousel
+          items={whyItems}
+          keyFor={(item) => item.title}
+          perView={{ base: 1, md: 2, lg: 3 }}
+          dark
+          className="mb-2"
+          renderItem={({ icon: Icon, title, desc }, i) => (
             <motion.div
-              key={title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.07 }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-2xl p-7 border border-white/6 transition-all duration-300 cursor-default overflow-hidden"
-              style={{ background: 'rgba(255,255,255,0.04)' }}
+              className="glass-card-premium group relative rounded-2xl p-7 cursor-default overflow-hidden h-full"
             >
-              {/* Hover border glow */}
-              <div className="absolute inset-0 rounded-2xl border border-gold/0 group-hover:border-gold/25 transition-all duration-300 pointer-events-none" />
-
               {/* Icon */}
               <div
                 className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
@@ -96,19 +97,18 @@ export default function WhyUs() {
               {/* Description */}
               <p className="text-gray-500 text-sm leading-[1.75]">{desc}</p>
             </motion.div>
-          ))}
-
-        </div>
+          )}
+        />
 
         {/* ── CTA ── */}
-        <div className="text-center mt-14">
+        <div className="text-center mt-12">
           <a href="/contact" className="btn-primary text-base px-9 py-4 inline-flex">
             Get a Free Quote, No Obligation
           </a>
           <p className="text-gray-600 text-xs mt-4">
             Prefer to talk first?{' '}
-            <a href="tel:+15195550192" className="text-gold font-semibold hover:underline">
-              Call +12264481189
+            <a href="tel:+12264481189" className="text-gold font-semibold hover:underline">
+              Call (226) 448-1189
             </a>{' '}
             , we're happy to answer your questions.
           </p>

@@ -70,16 +70,8 @@ export const reviews = [
   },
 ];
 
-export const ratingStats = {
-  average: 4.9,
-  total: 127,
-  breakdown: [
-    { stars: 5, count: 121 },
-    { stars: 4, count: 4 },
-    { stars: 3, count: 2 },
-    { stars: 2, count: 0 },
-    { stars: 1, count: 0 },
-  ],
-};
+// Verified Google Business profile — link out to it instead of showing a
+// hardcoded aggregate rating/count, since that number isn't ours to state.
+export const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/place/Weather+Guard+Coating';
 
 export default reviews;

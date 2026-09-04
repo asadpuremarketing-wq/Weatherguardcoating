@@ -151,7 +151,8 @@ function renderContent(content) {
 
     // Paragraph with emoji indicators (✅, ❌, 🚩)
     if (line.trim()) {
-      const isCallout = line.match(/^[✅❌🚩⚠️🔴🟡🟢]/);
+      const calloutPrefixes = ['✅', '❌', '🚩', '⚠️', '🔴', '🟡', '🟢'];
+      const isCallout = calloutPrefixes.some((prefix) => line.trim().startsWith(prefix));
       elements.push(
         <p
           key={i}

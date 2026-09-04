@@ -36,7 +36,7 @@ export const services = [
     shortDesc: 'Professional commercial painting that minimizes downtime and delivers lasting results.',
     fullDesc: 'We handle commercial projects of all sizes, from office buildings to retail spaces, with minimal disruption to your business operations. Night and weekend scheduling available.',
     icon: '🏢',
-    image: '/images/service-commercial.png',
+    image: '/images/service-commercial.jpg',
     features: [
       'Day, Night & Weekend Scheduling',
       'Project Management Included',

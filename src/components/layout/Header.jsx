@@ -39,11 +39,13 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-    setServicesOpen(false);
-  }, [location.pathname]);
+  // Close mobile menu on route change (adjust state during render, not in an effect)
+  const [prevPathname, setPrevPathname] = useState(location.pathname);
+  if (prevPathname !== location.pathname) {
+    setPrevPathname(location.pathname);
+    if (mobileOpen) setMobileOpen(false);
+    if (servicesOpen) setServicesOpen(false);
+  }
 
   const isActive = (href) => {
     if (href === '/') return location.pathname === '/';

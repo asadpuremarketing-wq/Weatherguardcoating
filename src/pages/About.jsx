@@ -22,7 +22,7 @@ const milestones = [
   { year: '2003', event: 'Added agricultural and farm painting services to serve Southwestern Ontario\'s farming community.' },
   { year: '2010', event: 'Launched roof coating division, becoming one of the few contractors offering full-service coatings.' },
   { year: '2018', event: 'Grew to a team of 25+ professionals serving clients within a 160km radius of London.' },
-  { year: '2024', event: 'Surpassed 1,000 completed projects and 127 five-star Google reviews.' },
+  { year: '2024', event: 'Surpassed 1,000 completed projects, with verified five-star reviews from clients on Google.' },
 ];
 
 export default function About() {
@@ -37,7 +37,7 @@ export default function About() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/about`} />
         <meta property="og:title" content="About Weather Guard Coating | 35+ Years in London, Ontario" />
-        <meta property="og:description" content="Founded in 1989, Weather Guard Coating is London Ontario's trusted painting contractor. 35+ years, 1,000+ projects, 127 five-star reviews." />
+        <meta property="og:description" content="Founded in 1989, Weather Guard Coating is London Ontario's trusted painting contractor. 35+ years, 1,000+ projects, verified five-star reviews." />
         <meta property="og:url" content={`${BASE_URL}/about`} />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -76,6 +76,7 @@ export default function About() {
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
                   alt="Weather Guard Coatings team"
                   className="w-full h-80 object-cover"
+                  loading="lazy"
                 />
               </motion.div>
             </div>

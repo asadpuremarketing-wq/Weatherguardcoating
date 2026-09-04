@@ -222,7 +222,7 @@ Weather Guard Coating handles exterior projects throughout London, ON and surrou
     author: 'Weather Guard Coating',
     category: 'Commercial',
     readTime: '7 min read',
-    image: '/images/service-commercial.png',
+    image: '/images/service-commercial.jpg',
     keywords: ['commercial painting London Ontario', 'office painting London ON', 'commercial painter London Ontario', 'commercial painting contractor Ontario'],
     content: `
 ## Commercial Painting in London, Ontario: What Business Owners Need to Know
@@ -724,7 +724,7 @@ We know this checklist because we tick every box on it. Here's what we provide o
 ✅ Detailed written estimates with exact product specifications
 ✅ Sherwin-Williams and Benjamin Moore products only
 ✅ 3-year workmanship warranty in writing
-✅ 4.9 stars on Google from 127+ London homeowners and businesses
+✅ Verified five-star reviews from London homeowners and businesses on Google
 ✅ Fixed crew, the same professional team on your project start to finish
 
 **Call (226) 448-1189** for your free, no-pressure estimate. We'll give you a detailed proposal and answer every question, whether or not you choose us.

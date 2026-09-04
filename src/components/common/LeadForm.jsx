@@ -2,15 +2,14 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Phone, Send, Loader2, User, PhoneCall, Mail, ChevronDown, CheckCircle, Lock, Zap, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';
 import { sendFormEmails } from '../../lib/emailService';
 import { gtagReportCallConversion, gtagReportFormConversion } from '../../lib/gtag';
 
-const PHONE = '+12264481189';
-const PHONE_HREF = 'tel:+15195550192';
+const PHONE = '(226) 448-1189';
+const PHONE_HREF = 'tel:+12264481189';
 
 // ── Validation Schema ────────────────────────────────────────────────
 const quoteSchema = z.object({
@@ -18,7 +17,7 @@ const quoteSchema = z.object({
   phone: z
     .string()
     .min(10, 'Please enter a valid phone number')
-    .regex(/^[\d\s\-\(\)\+]+$/, 'Invalid phone number'),
+    .regex(/^[\d\s\-()+]+$/, 'Invalid phone number'),
   email: z.string().email('Please enter a valid email address'),
   service: z.string().min(1, 'Please select a service'),
   message: z.string().optional(),
@@ -78,7 +77,6 @@ export default function LeadForm({ className, compact = false }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState(null);
-  const navigate = useNavigate();
 
   const {
     register,

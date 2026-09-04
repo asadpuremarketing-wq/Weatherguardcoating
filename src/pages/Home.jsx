@@ -2,10 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/home/HeroSection';
 import TrustBar from '../components/home/TrustBar';
 import ReviewsSection from '../components/home/ReviewsSection';
-import ProblemSolution from '../components/home/ProblemSolution';
 import BeforeAfter from '../components/home/BeforeAfter';
 import ServicesSnapshot from '../components/home/ServicesSnapshot';
-import ProcessSection from '../components/home/ProcessSection';
 import WhyUs from '../components/home/WhyUs';
 import ServiceArea from '../components/home/ServiceArea';
 import CTASection from '../components/common/CTASection';
@@ -51,25 +49,19 @@ export default function Home() {
         {/* 3. Reviews */}
         <ReviewsSection />
 
-        {/* 4. Problem / Solution */}
-        <ProblemSolution />
-
-        {/* 5. Before / After */}
+        {/* 4. Before / After */}
         <BeforeAfter />
 
-        {/* 6. Services Snapshot */}
+        {/* 5. Services Snapshot */}
         <ServicesSnapshot />
 
-        {/* 7. Process */}
-        <ProcessSection />
-
-        {/* 8. Why Us */}
+        {/* 6. Why Us */}
         <WhyUs />
 
-        {/* 9. Service Area */}
+        {/* 7. Service Area */}
         <ServiceArea />
 
-        {/* 10. Final CTA */}
+        {/* 8. Final CTA */}
         <CTASection
           title="Ready to Get Started?"
           subtitle="Get your free, detailed estimate within 24 hours. No pressure, no obligation."

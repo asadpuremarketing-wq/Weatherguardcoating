@@ -2,7 +2,7 @@
  * Email Service - routes through Vercel serverless function /api/send-email
  *
  * Local dev:  the /api/send-email function runs via `vercel dev`
- * Vercel:     add GOOGLE_SCRIPT_URL in Project Settings > Environment Variables
+ * Vercel:     add GMAIL_USER and GMAIL_PASS in Project Settings > Environment Variables
  */
 
 const SERVICE_LABELS = {
@@ -14,8 +14,8 @@ const SERVICE_LABELS = {
 };
 
 /**
- * Sends form data to the Vercel API route, which forwards it to Google Apps Script.
- * The Google Script URL never touches the browser.
+ * Sends form data to the Vercel API route, which emails it via Gmail/Nodemailer.
+ * Gmail credentials never touch the browser.
  */
 export async function sendFormEmails(data) {
   const payload = {

@@ -1,58 +1,27 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { Star, ExternalLink } from 'lucide-react';
 import ReviewCard from '../components/common/ReviewCard';
-import VideoTestimonial from '../components/common/VideoTestimonial';
 import CTASection from '../components/common/CTASection';
-import reviews, { ratingStats } from '../data/reviews';
+import reviews, { GOOGLE_REVIEWS_URL } from '../data/reviews';
 import BreadcrumbSchema from '../components/seo/BreadcrumbSchema';
 import ReviewSchema from '../components/seo/ReviewSchema';
 
 const BASE_URL = 'https://weatherguardcoating.ca';
 
-const videoTestimonials = [
-  {
-    id: 1,
-    name: 'James Calloway',
-    location: 'St. Thomas, ON',
-    rating: 5,
-    excerpt: "I've hired a lot of contractors over the years. Weather Guard is in a different league entirely.",
-    thumbnail: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80',
-    videoUrl: null,
-  },
-  {
-    id: 2,
-    name: 'Linda Bergstrom',
-    location: 'Stratford, ON',
-    rating: 5,
-    excerpt: "From estimate to final walkthrough, they communicated every step. My house looks brand new.",
-    thumbnail: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80',
-    videoUrl: null,
-  },
-  {
-    id: 3,
-    name: 'Mark Hendricks',
-    location: 'London, ON',
-    rating: 5,
-    excerpt: "The prep work alone was more thorough than any contractor we've ever hired. Incredible result.",
-    thumbnail: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80',
-    videoUrl: null,
-  },
-];
-
 export default function Reviews() {
   return (
     <>
       <Helmet>
-        <title>Customer Reviews | 4.9★ Painting Contractor London Ontario | Weather Guard Coating</title>
+        <title>Customer Reviews | Painting Contractor London Ontario | Weather Guard Coating</title>
         <meta
           name="description"
-          content="Read 127+ five-star reviews of Weather Guard Coating, London Ontario's trusted painting contractor. 4.9 stars from homeowners, businesses, and property owners across Southwestern Ontario."
+          content="Read verified reviews of Weather Guard Coating, London Ontario's trusted painting contractor, from homeowners, businesses, and property owners across Southwestern Ontario."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BASE_URL}/reviews`} />
-        <meta property="og:title" content="Customer Reviews | 4.9★ Painting Contractor London Ontario" />
-        <meta property="og:description" content="127+ five-star Google reviews for Weather Guard Coating. See what London Ontario homeowners say about us." />
+        <meta property="og:title" content="Customer Reviews | Painting Contractor London Ontario" />
+        <meta property="og:description" content="Verified Google reviews for Weather Guard Coating. See what London Ontario homeowners say about us." />
         <meta property="og:url" content={`${BASE_URL}/reviews`} />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -63,7 +32,7 @@ export default function Reviews() {
           { name: 'Reviews', url: `${BASE_URL}/reviews` },
         ]}
       />
-      <ReviewSchema reviews={reviews} ratingStats={ratingStats} />
+      <ReviewSchema reviews={reviews} />
 
       <main id="main-content" className="pt-24">
         {/* Page header */}
@@ -81,63 +50,25 @@ export default function Reviews() {
           </div>
         </section>
 
-        {/* Overall rating summary */}
+        {/* Verified on Google */}
         <section className="py-12 bg-white border-b border-gray-100">
-          <div className="container-custom">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-              {/* Big rating */}
-              <div className="text-center">
-                <div className="text-7xl font-extrabold text-charcoal">{ratingStats.average}</div>
-                <div className="flex items-center gap-1 justify-center mb-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={22} className="fill-gold text-gold" />
-                  ))}
-                </div>
-                <div className="text-gray-500 text-sm font-medium">{ratingStats.total} Google Reviews</div>
-              </div>
-
-              <div className="w-px h-24 bg-gray-200 hidden md:block" />
-
-              {/* Breakdown bars */}
-              <div className="space-y-2 w-full max-w-xs">
-                {ratingStats.breakdown.map((b) => (
-                  <div key={b.stars} className="flex items-center gap-3">
-                    <span className="text-sm text-gray-500 w-3 text-right">{b.stars}</span>
-                    <Star size={12} className="fill-gold text-gold shrink-0" />
-                    <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${(b.count / ratingStats.total) * 100}%` }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="h-full bg-gold rounded-full"
-                      />
-                    </div>
-                    <span className="text-sm text-gray-500 w-6">{b.count}</span>
-                  </div>
+          <div className="container-custom flex justify-center">
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-surface rounded-2xl shadow-lift px-7 py-4 border border-gray-100 hover:border-gold/40 transition-colors duration-200 group"
+            >
+              <div className="flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={20} className="fill-gold text-gold" />
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Video testimonials */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <h2 className="section-title text-center mb-10">Video Testimonials</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {videoTestimonials.map((t, i) => (
-                <motion.div
-                  key={t.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <VideoTestimonial testimonial={t} />
-                </motion.div>
-              ))}
-            </div>
+              <span className="text-sm font-semibold text-charcoal group-hover:text-gold transition-colors">
+                Verified reviews on Google
+              </span>
+              <ExternalLink size={15} className="text-gray-400 group-hover:text-gold transition-colors" />
+            </a>
           </div>
         </section>
 

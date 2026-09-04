@@ -42,7 +42,7 @@ export const portfolioItems = [
     location: 'London, ON',
     year: 2024,
     before: '/images/portfolio-4-before.jpg',
-    after: '/images/portfolio-4-after.png',
+    after: '/images/portfolio-4-after.jpg',
     description: 'Elastomeric roof coating on 18,000 sq ft flat roof, solved persistent leak issues and reduced cooling costs.',
     tags: ['roof', 'commercial', 'flat roof'],
   },

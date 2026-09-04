@@ -4,15 +4,36 @@ import { motion } from 'framer-motion';
 import { servicesBySlug } from '../data/services';
 import LeadForm from '../components/common/LeadForm';
 import ReviewCard from '../components/common/ReviewCard';
+import BeforeAfterCard from '../components/common/BeforeAfterCard';
+import Carousel from '../components/common/Carousel';
 import CTASection from '../components/common/CTASection';
-import reviews from '../data/reviews';
-import { CheckCircle, X, ChevronDown } from 'lucide-react';
+import reviews, { GOOGLE_REVIEWS_URL } from '../data/reviews';
+import portfolioItems from '../data/portfolio';
+import { CheckCircle, ChevronDown, Shield, Award, Star, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import BreadcrumbSchema from '../components/seo/BreadcrumbSchema';
 import ServiceSchema from '../components/seo/ServiceSchema';
 import FAQSchema from '../components/seo/FAQSchema';
 
 const BASE_URL = 'https://weatherguardcoating.ca';
+
+// Maps a service id to the matching portfolio category / review keyword
+const CATEGORY_MAP = {
+  residential: 'residential',
+  commercial: 'commercial',
+  farm: 'farm',
+  'roof-coating': 'roof',
+};
+
+// Only real, on-site project photos live under /images — anything hosted
+// elsewhere (stock placeholders) is excluded so this page never shows fake work.
+const isRealPhoto = (src) => typeof src === 'string' && src.startsWith('/images');
+
+const credentialItems = [
+  { icon: Shield, label: 'Fully Insured', sub: '$5M liability + WSIB compliant' },
+  { icon: Award, label: '3-Year Warranty', sub: 'On every completed project' },
+  { icon: Star, label: 'Google Verified', sub: 'Real client reviews, see them below' },
+];
 
 /**
  * Individual Service Page Template.
@@ -24,9 +45,18 @@ export default function ServiceDetail() {
 
   if (!service) return <Navigate to="/services" replace />;
 
-  const relatedReviews = reviews.filter(
-    (r) => r.service.toLowerCase().includes(service.id) || r.service.toLowerCase().includes('residential')
-  ).slice(0, 2);
+  const categoryKey = CATEGORY_MAP[service.id] ?? service.id;
+
+  // Real (non-stock) before/after projects for this specific service category
+  const relatedProjects = portfolioItems.filter(
+    (p) => p.category === categoryKey && isRealPhoto(p.before) && isRealPhoto(p.after)
+  );
+
+  // Reviews that actually mention this service — no filler or fallback content
+  const relatedReviews = reviews.filter((r) =>
+    r.service.toLowerCase().includes(categoryKey)
+  );
+  const reviewColumns = Math.max(1, Math.min(relatedReviews.length, 3));
 
   return (
     <>
@@ -56,12 +86,13 @@ export default function ServiceDetail() {
       <FAQSchema faqs={service.faqs} />
 
       <main id="main-content" className="pt-24">
-        {/* Hero */}
+        {/* ── Hero ── */}
         <section className="relative bg-charcoal py-20 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center opacity-20"
             style={{ backgroundImage: `url(${service.image})` }}
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-charcoal/40 pointer-events-none" />
           <div className="container-custom relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -76,6 +107,24 @@ export default function ServiceDetail() {
                   {service.title}
                 </h1>
                 <p className="text-gray-300 text-lg leading-relaxed mb-6">{service.fullDesc}</p>
+
+                {/* Rating strip */}
+                <a
+                  href={GOOGLE_REVIEWS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mb-5 group"
+                >
+                  <div className="flex items-center gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={16} className="fill-gold text-gold" />
+                    ))}
+                  </div>
+                  <span className="text-gray-400 text-sm group-hover:text-gold transition-colors">
+                    Verified reviews on Google
+                  </span>
+                </a>
+
                 {/* Trust chips */}
                 <div className="flex flex-wrap gap-2">
                   {['Free Estimate', 'Fully Insured', '35+ Years Exp', 'London ON'].map((chip) => (
@@ -95,27 +144,26 @@ export default function ServiceDetail() {
           </div>
         </section>
 
-        {/* Problems targeted */}
-        <section className="section-padding bg-white">
-          <div className="container-custom max-w-4xl">
-            <h2 className="section-title mb-8 text-center">Sound Familiar?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {service.problems.map((p) => (
-                <div key={p} className="flex items-start gap-3 bg-red-50 border border-red-100 rounded-xl px-4 py-3">
-                  <X size={16} className="text-red-500 mt-0.5 shrink-0" />
-                  <p className="text-gray-700 text-sm">{p}</p>
+        {/* ── Credentials strip ── */}
+        <section className="bg-white border-b border-gray-100">
+          <div className="container-custom">
+            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+              {credentialItems.map(({ icon: Icon, label, sub }) => (
+                <div key={label} className="flex items-center gap-4 py-6 px-4 sm:justify-center">
+                  <div className="w-11 h-11 rounded-2xl bg-gold/10 flex items-center justify-center shrink-0">
+                    <Icon className="text-gold" size={20} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <div className="font-bold text-charcoal text-sm">{label}</div>
+                    <div className="text-gray-400 text-xs">{sub}</div>
+                  </div>
                 </div>
               ))}
-            </div>
-            <div className="mt-6 bg-green-50 border border-green-100 rounded-xl p-5 text-center">
-              <p className="text-green-800 font-semibold text-base">
-                We solve every one of these issues, guaranteed.
-              </p>
             </div>
           </div>
         </section>
 
-        {/* What we do — features */}
+        {/* ── What we do — features ── */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom max-w-5xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -141,33 +189,70 @@ export default function ServiceDetail() {
                   src={service.image}
                   alt={service.title}
                   className="w-full h-72 object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Reviews */}
-        {relatedReviews.length > 0 && (
+        {/* ── Real project results (only real, on-site photos — no stock) ── */}
+        {relatedProjects.length > 0 && (
           <section className="section-padding bg-white">
-            <div className="container-custom max-w-4xl">
-              <h2 className="section-title mb-8 text-center">What Our Clients Say</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {relatedReviews.map((r) => (
-                  <ReviewCard key={r.id} review={r} />
+            <div className="container-custom max-w-5xl">
+              <div className="text-center mb-10">
+                <p className="section-label mb-2">Real Work, Real Results</p>
+                <h2 className="section-title mb-3">
+                  A Recent {service.title} Project
+                </h2>
+                <p className="text-gray-500 text-sm max-w-lg mx-auto">
+                  An actual before &amp; after from our own crew, drag to compare.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 max-w-3xl mx-auto">
+                {relatedProjects.map((item) => (
+                  <BeforeAfterCard key={item.id} item={item} />
                 ))}
               </div>
-              <div className="text-center mt-6">
-                <Link to="/reviews" className="text-gold font-semibold text-sm hover:underline">
-                  Read all 127 reviews →
+              <div className="text-center mt-8">
+                <Link
+                  to={`/portfolio?category=${categoryKey}`}
+                  className="btn-outline-gold inline-flex"
+                >
+                  View More {service.title} Projects <ArrowRight size={16} />
                 </Link>
               </div>
             </div>
           </section>
         )}
 
-        {/* FAQ */}
-        <section className="section-padding bg-gray-50">
+        {/* ── Reviews (only real reviews mentioning this service) ── */}
+        {relatedReviews.length > 0 && (
+          <section className="section-padding bg-gray-50">
+            <div className="container-custom">
+              <div className="text-center mb-10">
+                <p className="section-label mb-2">What Clients Say</p>
+                <h2 className="section-title mb-3">
+                  {service.title} Clients on Google
+                </h2>
+              </div>
+              <Carousel
+                items={relatedReviews}
+                perView={{ base: 1, md: Math.min(reviewColumns, 2), lg: reviewColumns }}
+                className="max-w-5xl mx-auto mb-4"
+                renderItem={(r) => <ReviewCard review={r} className="h-full" />}
+              />
+              <div className="text-center mt-6">
+                <Link to="/reviews" className="text-gold font-semibold text-sm hover:underline">
+                  See more reviews →
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ── FAQ ── */}
+        <section className="section-padding bg-white">
           <div className="container-custom max-w-3xl">
             <h2 className="section-title mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-3">

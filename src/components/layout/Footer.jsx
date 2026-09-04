@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Globe, Share2, ExternalLink } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { gtagReportCallConversion } from '../../lib/gtag';
 
 const PHONE = '(226) 448-1189';
@@ -39,7 +39,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal text-white pb-20 lg:pb-0" aria-label="Footer">
+    <footer className="bg-charcoal text-white" aria-label="Footer">
       {/* Main footer */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -57,18 +57,6 @@ export default function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
               Serving Southwestern Ontario for over 35 years. Professional painting and coatings for residential, commercial, farm, and industrial properties.
             </p>
-            {/* Social links */}
-            <div className="flex items-center gap-3">
-              <a href="#" aria-label="Website" className="w-9 h-9 bg-charcoal-light rounded-lg flex items-center justify-center text-gray-400 hover:text-gold hover:bg-charcoal-muted transition-colors">
-                <Globe size={16} />
-              </a>
-              <a href="#" aria-label="Social Media" className="w-9 h-9 bg-charcoal-light rounded-lg flex items-center justify-center text-gray-400 hover:text-gold hover:bg-charcoal-muted transition-colors">
-                <Share2 size={16} />
-              </a>
-              <a href="#" aria-label="External Link" className="w-9 h-9 bg-charcoal-light rounded-lg flex items-center justify-center text-gray-400 hover:text-gold hover:bg-charcoal-muted transition-colors">
-                <ExternalLink size={16} />
-              </a>
-            </div>
           </div>
 
           {/* Services column */}

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils';
 import { gtagReportCallConversion } from '../../lib/gtag';
 
-const PHONE = '+12264481189';
+const PHONE = '(226) 448-1189';
 const PHONE_HREF = 'tel:+12264481189';
 
 /**

@@ -2,29 +2,8 @@ import { Link } from 'react-router-dom';
 import { Star, ArrowRight, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ReviewCard from '../common/ReviewCard';
-import VideoTestimonial from '../common/VideoTestimonial';
-import reviews, { ratingStats } from '../../data/reviews';
-
-const videoTestimonials = [
-  {
-    id: 1,
-    name: 'James Calloway',
-    location: 'St. Thomas, ON',
-    rating: 5,
-    excerpt: "I've hired a lot of contractors over the years. Weather Guard is in a different league entirely.",
-    thumbnail: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=700&q=80',
-    videoUrl: null,
-  },
-  {
-    id: 2,
-    name: 'Linda Bergstrom',
-    location: 'Stratford, ON',
-    rating: 5,
-    excerpt: "From estimate to final walkthrough, they communicated every step. My house looks brand new.",
-    thumbnail: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=700&q=80',
-    videoUrl: null,
-  },
-];
+import Carousel from '../common/Carousel';
+import reviews, { GOOGLE_REVIEWS_URL } from '../../data/reviews';
 
 /**
  * Reviews section — CRO-optimized: better intro copy, trust note, Google CTA.
@@ -44,102 +23,61 @@ export default function ReviewsSection() {
             Real homeowners, businesses, and property owners across London and surrounding Ontario sharing their experience.
           </p>
 
-          {/* ── Rating summary card ── */}
-          <motion.div
+          {/* ── Google reviews link card ── */}
+          <motion.a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-8 bg-white rounded-2xl shadow-lift px-10 py-6 mt-7 border border-gray-100"
+            className="inline-flex items-center gap-3 bg-white rounded-2xl shadow-lift px-7 py-4 mt-7 border border-gray-100 hover:border-gold/40 transition-colors duration-200 group"
           >
-            {/* Score */}
-            <div className="text-center">
-              <div className="text-[3.5rem] font-extrabold text-charcoal leading-none tracking-tight">
-                {ratingStats.average}
-              </div>
-              <div className="flex items-center gap-0.5 mt-2 justify-center">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={18} className="fill-gold text-gold" />
-                ))}
-              </div>
-              <div className="text-xs text-gray-400 mt-1.5 font-semibold tracking-wide uppercase">
-                {ratingStats.total} Google Reviews
-              </div>
-            </div>
-
-            <div className="w-px h-16 bg-gray-200" />
-
-            {/* Breakdown bars */}
-            <div className="space-y-1.5">
-              {ratingStats.breakdown.map((b) => (
-                <div key={b.stars} className="flex items-center gap-2.5">
-                  <span className="text-xs text-gray-500 w-3 text-right font-medium">{b.stars}</span>
-                  <Star size={11} className="fill-gold text-gold shrink-0" />
-                  <div className="w-28 h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${(b.count / ratingStats.total) * 100}%` }}
-                      transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-                      viewport={{ once: true }}
-                      className="h-full bg-gradient-to-r from-gold to-gold-light rounded-full"
-                    />
-                  </div>
-                  <span className="text-xs text-gray-400 font-medium w-5">{b.count}</span>
-                </div>
+            <div className="flex items-center gap-0.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} size={18} className="fill-gold text-gold" />
               ))}
             </div>
-          </motion.div>
-
-          {/* Trust note under rating card */}
-          <p className="text-xs text-gray-400 font-medium mt-3">
-            ⭐ Top-rated by clients across London and surrounding Ontario
-          </p>
-        </div>
-
-        {/* ── Video testimonials ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          {videoTestimonials.map((t, i) => (
-            <motion.div
-              key={t.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <VideoTestimonial testimonial={t} />
-            </motion.div>
-          ))}
+            <span className="text-sm font-semibold text-charcoal group-hover:text-gold transition-colors">
+              See our verified reviews on Google
+            </span>
+            <ExternalLink size={15} className="text-gray-400 group-hover:text-gold transition-colors" />
+          </motion.a>
         </div>
 
         {/* ── Text review cards ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {reviews.slice(0, 3).map((r, i) => (
+        <Carousel
+          items={reviews.slice(0, 6)}
+          perView={{ base: 1, md: 2, lg: 3 }}
+          className="mb-4"
+          renderItem={(r, i) => (
             <motion.div
-              key={r.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+              className="h-full"
             >
               <ReviewCard review={r} className="h-full" />
             </motion.div>
-          ))}
-        </div>
+          )}
+        />
 
         {/* ── CTAs ── */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/reviews" className="btn-outline-gold">
-            Read All {ratingStats.total} Reviews <ArrowRight size={16} />
+            Read More Reviews <ArrowRight size={16} />
           </Link>
           <a
-            href="https://g.page/r/weatherguardcoatings/review"
+            href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-gold transition-colors duration-200"
             id="google-reviews-cta"
           >
             <ExternalLink size={15} />
-            See More Google Reviews
+            See More on Google
           </a>
         </div>
       </div>

@@ -1,22 +1,16 @@
 import { Helmet } from 'react-helmet-async';
 
 /**
- * AggregateRating + Review JSON-LD schema for the Reviews page.
- * Enables star ratings in Google search results.
+ * Review JSON-LD schema for the Reviews page.
+ * No aggregateRating here — we only publish per-review structured data for
+ * reviews we can actually attribute, not a hardcoded overall score/count.
  */
-export default function ReviewSchema({ reviews, ratingStats }) {
+export default function ReviewSchema({ reviews }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Weather Guard Coating',
     url: 'https://weatherguardcoating.ca',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: ratingStats?.average || '4.9',
-      reviewCount: ratingStats?.total || '127',
-      bestRating: '5',
-      worstRating: '1',
-    },
     review: (reviews || []).slice(0, 5).map((r) => ({
       '@type': 'Review',
       reviewRating: {

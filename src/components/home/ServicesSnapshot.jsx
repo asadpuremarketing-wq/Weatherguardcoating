@@ -2,6 +2,7 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ServiceCard from '../common/ServiceCard';
+import Carousel from '../common/Carousel';
 import services from '../../data/services';
 
 // Benefit-driven short descriptions for homepage cards
@@ -46,19 +47,22 @@ export default function ServicesSnapshot() {
         </motion.div>
 
         {/* ── Service cards ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {enhancedServices.map((service, i) => (
+        <Carousel
+          items={enhancedServices}
+          perView={{ base: 1, md: 2, lg: 3 }}
+          className="mb-4"
+          renderItem={(service, i) => (
             <motion.div
-              key={service.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.09 }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.09 }}
+              className="h-full"
             >
               <ServiceCard service={service} className="h-full" />
             </motion.div>
-          ))}
-        </div>
+          )}
+        />
 
         {/* ── CTAs ── */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

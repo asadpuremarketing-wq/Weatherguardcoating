@@ -16,8 +16,6 @@ const BUSINESS = {
   lat: 42.9849,
   lng: -81.2453,
   priceRange: '$$',
-  rating: '4.9',
-  reviewCount: '127',
   foundingYear: '1989',
   areaServed: [
     'London, Ontario',
@@ -84,13 +82,6 @@ export default function LocalBusinessSchema() {
         closes: '14:00',
       },
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: BUSINESS.rating,
-      reviewCount: BUSINESS.reviewCount,
-      bestRating: '5',
-      worstRating: '1',
-    },
     areaServed: BUSINESS.areaServed.map((area) => ({
       '@type': 'City',
       name: area,

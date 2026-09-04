@@ -159,7 +159,7 @@ export default async function handler(req, res) {
         <!-- CTA Button -->
         <tr>
           <td style="padding:0 32px 32px;text-align:center;">
-            <a href="https://weatherguardcoatings.ca/portfolio"
+            <a href="https://weatherguardcoating.ca/portfolio"
                style="display:inline-block;background:#C9A84C;color:#ffffff;text-decoration:none;font-size:15px;font-weight:bold;padding:14px 36px;border-radius:8px;">
               View Our Work
             </a>

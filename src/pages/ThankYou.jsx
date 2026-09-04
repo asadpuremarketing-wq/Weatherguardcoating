@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, Phone, ArrowRight, Star, Clock, BookOpen, Award } from 'lucide-react';
 
-const PHONE = '+12264481189';
-const PHONE_HREF = 'tel:+15195550192';
+const PHONE = '(226) 448-1189';
+const PHONE_HREF = 'tel:+12264481189';
 
 const nextSteps = [
   {
