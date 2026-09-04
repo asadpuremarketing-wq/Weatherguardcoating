@@ -46,7 +46,7 @@
   /* ─── Buttons ──────────────────────────────────────────────────── */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2
-           bg-gold text-white font-bold px-7 py-3.5 rounded-xl
+           bg-gold text-charcoal font-bold px-7 py-3.5 rounded-xl
            border border-gold-dark/30
            transition-all duration-200
            hover:bg-gold-dark hover:-translate-y-0.5 hover:scale-[1.02]
@@ -71,9 +71,9 @@
 
   .btn-outline-gold {
     @apply inline-flex items-center justify-center gap-2
-           border-2 border-gold text-gold font-bold px-7 py-3.5 rounded-xl
+           border-2 border-gold text-gold-ink font-bold px-7 py-3.5 rounded-xl
            transition-all duration-200
-           hover:bg-gold hover:text-white hover:-translate-y-0.5 hover:scale-[1.02]
+           hover:bg-gold hover:text-charcoal hover:-translate-y-0.5 hover:scale-[1.02]
            active:scale-95
            cursor-pointer select-none;
   }
@@ -132,7 +132,13 @@
   }
 
   /* ─── Typography ───────────────────────────────────────────────── */
+  /* Default: for use on white/light section backgrounds (the common case) */
   .section-label {
+    @apply text-gold-ink font-semibold text-xs uppercase tracking-[0.15em];
+  }
+
+  /* For use on dark section backgrounds (charcoal, gradients) */
+  .section-label-on-dark {
     @apply text-gold font-semibold text-xs uppercase tracking-[0.15em];
   }
 
@@ -193,11 +199,11 @@
 
   /* ─── Badges ───────────────────────────────────────────────────── */
   .badge-gold {
-    @apply text-xs font-bold text-white bg-gold px-2.5 py-1 rounded-full;
+    @apply text-xs font-bold text-charcoal bg-gold px-2.5 py-1 rounded-full;
   }
 
   .badge-dark {
-    @apply text-xs font-bold text-gold bg-gold/10 border border-gold/20 px-2.5 py-1 rounded-full;
+    @apply text-xs font-bold text-gold-ink bg-gold/10 border border-gold/20 px-2.5 py-1 rounded-full;
   }
 }
 

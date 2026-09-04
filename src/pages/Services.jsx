@@ -91,7 +91,7 @@ export default function Services() {
                   'Post-project follow-up',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2 text-sm text-gray-700">
-                    <span className="text-gold font-bold">✓</span>
+                    <span className="text-gold-ink font-bold">✓</span>
                     {item}
                   </div>
                 ))}

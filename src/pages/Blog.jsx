@@ -115,7 +115,7 @@ export default function Blog() {
                       <span className="flex items-center gap-1"><Clock size={11} />{post.readTime}</span>
                     </div>
                     <Link to={`/blog/${post.slug}`}>
-                      <h2 className="font-bold text-charcoal text-base leading-snug mb-2 group-hover:text-gold transition-colors line-clamp-3">
+                      <h2 className="font-bold text-charcoal text-base leading-snug mb-2 group-hover:text-gold-ink transition-colors line-clamp-3">
                         {post.title}
                       </h2>
                     </Link>
@@ -124,7 +124,7 @@ export default function Blog() {
                     </p>
                     <Link
                       to={`/blog/${post.slug}`}
-                      className="mt-4 inline-flex items-center gap-1.5 text-gold font-semibold text-sm hover:gap-2.5 transition-all duration-200"
+                      className="mt-4 inline-flex items-center gap-1.5 text-gold-ink font-semibold text-sm hover:gap-2.5 transition-all duration-200"
                     >
                       Read Article<span className="sr-only">: {post.title}</span> <ArrowRight size={14} />
                     </Link>

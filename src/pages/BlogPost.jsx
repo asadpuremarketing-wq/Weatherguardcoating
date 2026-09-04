@@ -88,7 +88,7 @@ function renderContent(content) {
         <ul key={`ul-${i}`} className="list-none space-y-2 my-4">
           {items.map((item, j) => (
             <li key={j} className="flex items-start gap-2 text-gray-700 text-sm leading-relaxed">
-              <span className="text-gold font-bold mt-0.5 shrink-0">•</span>
+              <span className="text-gold-ink font-bold mt-0.5 shrink-0">•</span>
               <span dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
             </li>
           ))}
@@ -292,7 +292,7 @@ export default function BlogPost() {
                       { label: 'Roof Coating', href: '/services/roof-coating' },
                     ].map((s) => (
                       <li key={s.href}>
-                        <Link to={s.href} className="text-sm text-gray-600 hover:text-gold font-medium transition-colors flex items-center gap-1">
+                        <Link to={s.href} className="text-sm text-gray-600 hover:text-gold-ink font-medium transition-colors flex items-center gap-1">
                           → {s.label}
                         </Link>
                       </li>

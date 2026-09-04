@@ -78,7 +78,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <p className="text-xs text-gray-500 mb-0.5">Phone</p>
-                          <p className="font-semibold text-charcoal group-hover:text-gold transition-colors">{PHONE}</p>
+                          <p className="font-semibold text-charcoal group-hover:text-gold-ink transition-colors">{PHONE}</p>
                         </div>
                       </a>
                     </li>
@@ -89,7 +89,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <p className="text-xs text-gray-500 mb-0.5">Email</p>
-                          <p className="font-semibold text-charcoal group-hover:text-gold transition-colors text-sm break-all">{EMAIL}</p>
+                          <p className="font-semibold text-charcoal group-hover:text-gold-ink transition-colors text-sm break-all">{EMAIL}</p>
                         </div>
                       </a>
                     </li>

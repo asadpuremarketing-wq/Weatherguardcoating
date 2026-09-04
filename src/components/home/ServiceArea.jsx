@@ -36,19 +36,19 @@ export default function ServiceArea() {
               {serviceAreas.map((area) => (
                 <span
                   key={area}
-                  className="flex items-center gap-1.5 bg-gray-100 hover:bg-gold/10 hover:text-gold text-gray-600 text-sm font-medium px-3 py-1.5 rounded-full transition-colors cursor-default"
+                  className="flex items-center gap-1.5 bg-gray-100 hover:bg-gold/10 hover:text-gold-ink text-gray-600 text-sm font-medium px-3 py-1.5 rounded-full transition-colors cursor-default"
                 >
                   <MapPin size={12} />
                   {area}
                 </span>
               ))}
-              <span className="bg-gold/10 text-gold text-sm font-medium px-3 py-1.5 rounded-full">
+              <span className="bg-gold/10 text-gold-ink text-sm font-medium px-3 py-1.5 rounded-full">
                 + more...
               </span>
             </div>
 
             <p className="text-gray-500 text-sm">
-              Don't see your city? <a href="tel:+12264481189" className="text-gold font-semibold hover:underline">Call (226) 448-1189</a>, we likely serve your area.
+              Don't see your city? <a href="tel:+12264481189" className="text-gold-ink font-semibold hover:underline">Call (226) 448-1189</a>, we likely serve your area.
             </p>
           </motion.div>
 

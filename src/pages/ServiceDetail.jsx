@@ -243,7 +243,7 @@ export default function ServiceDetail() {
                 renderItem={(r) => <ReviewCard review={r} className="h-full" />}
               />
               <div className="text-center mt-6">
-                <Link to="/reviews" className="text-gold font-semibold text-sm hover:underline">
+                <Link to="/reviews" className="text-gold-ink font-semibold text-sm hover:underline">
                   See more reviews →
                 </Link>
               </div>

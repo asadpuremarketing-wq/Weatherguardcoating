@@ -139,9 +139,9 @@ export default function LeadForm({ className, compact = false }) {
         </a>
         <p className="text-xs text-gray-400">
           You can also browse our{' '}
-          <a href="/portfolio" className="text-gold hover:underline font-medium">portfolio</a>{' '}
+          <a href="/portfolio" className="text-gold-ink hover:underline font-medium">portfolio</a>{' '}
           or{' '}
-          <a href="/reviews" className="text-gold hover:underline font-medium">reviews</a>{' '}
+          <a href="/reviews" className="text-gold-ink hover:underline font-medium">reviews</a>{' '}
           while you wait.
         </p>
       </motion.div>
@@ -296,7 +296,7 @@ export default function LeadForm({ className, compact = false }) {
 
         <a
           href={PHONE_HREF}
-          className="flex items-center justify-center gap-2 text-charcoal font-bold text-sm py-3 rounded-xl border border-gray-200 hover:border-gold hover:text-gold transition-all duration-200"
+          className="flex items-center justify-center gap-2 text-charcoal font-bold text-sm py-3 rounded-xl border border-gray-200 hover:border-gold hover:text-gold-ink transition-all duration-200"
           id="form-call-cta"
           onClick={() => gtagReportCallConversion(PHONE_HREF)}
         >

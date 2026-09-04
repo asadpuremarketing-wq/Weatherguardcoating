@@ -39,7 +39,7 @@ export default function ReviewsSection() {
                 <Star key={i} size={18} className="fill-gold text-gold" />
               ))}
             </div>
-            <span className="text-sm font-semibold text-charcoal group-hover:text-gold transition-colors">
+            <span className="text-sm font-semibold text-charcoal group-hover:text-gold-ink transition-colors">
               See our verified reviews on Google
             </span>
             <ExternalLink size={15} className="text-gray-400 group-hover:text-gold transition-colors" />
@@ -73,7 +73,7 @@ export default function ReviewsSection() {
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-gold transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-gold-ink transition-colors duration-200"
             id="google-reviews-cta"
           >
             <ExternalLink size={15} />

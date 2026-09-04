@@ -42,7 +42,7 @@ export default function ServiceCard({ service, className }) {
 
       {/* ── Content ── */}
       <div className="p-6">
-        <h3 className="font-extrabold text-charcoal text-[1.1rem] mb-2 group-hover:text-gold transition-colors duration-200 leading-snug">
+        <h3 className="font-extrabold text-charcoal text-[1.1rem] mb-2 group-hover:text-gold-ink transition-colors duration-200 leading-snug">
           {title}
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed mb-4">{shortDesc}</p>
@@ -52,7 +52,7 @@ export default function ServiceCard({ service, className }) {
           <ul className="mb-5 space-y-1.5">
             {features.slice(0, 3).map((f) => (
               <li key={f} className="flex items-center gap-2 text-xs text-gray-500 font-medium">
-                <span className="w-4 h-4 bg-gold/10 rounded-full flex items-center justify-center text-gold text-[9px] font-bold shrink-0">✓</span>
+                <span className="w-4 h-4 bg-gold/10 rounded-full flex items-center justify-center text-gold-ink text-[9px] font-bold shrink-0">✓</span>
                 {f}
               </li>
             ))}
@@ -61,7 +61,7 @@ export default function ServiceCard({ service, className }) {
 
         <Link
           to={`/services/${slug}`}
-          className="inline-flex items-center gap-1.5 text-gold font-bold text-sm group/link"
+          className="inline-flex items-center gap-1.5 text-gold-ink font-bold text-sm group/link"
         >
           Learn More<span className="sr-only"> about {title}</span>
           <ArrowRight size={14} className="transition-transform duration-200 group-hover/link:translate-x-1" />

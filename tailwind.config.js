@@ -20,6 +20,9 @@ export default {
           light: '#D9BC74',
           dark: '#A8872E',
           subtle: '#C9A84C1A',
+          // WCAG AA-safe (4.5:1+) gold for small text on white/light
+          // backgrounds — the DEFAULT gold only reaches ~2.3:1 on white.
+          ink: '#836D31',
         },
         surface: {
           DEFAULT: '#FAFAFA',

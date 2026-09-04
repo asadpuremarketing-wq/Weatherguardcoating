@@ -54,7 +54,7 @@ export default function WhyUs() {
           transition={{ duration: 0.55 }}
           className="text-center mb-14"
         >
-          <p className="section-label mb-3">Why Weather Guard</p>
+          <p className="section-label-on-dark mb-3">Why Weather Guard</p>
           <h2 id="whyus-heading" className="section-title-light mb-4">
             The Standard Other<br className="hidden md:block" /> Contractors Don't Meet
           </h2>

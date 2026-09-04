@@ -50,7 +50,7 @@ export default function CTASection({
           className="text-center max-w-3xl mx-auto"
         >
           {/* Label */}
-          <p className="section-label mb-4">Free Estimates with No Pressure</p>
+          <p className={cn(dark ? 'section-label-on-dark' : 'section-label', 'mb-4')}>Free Estimates with No Pressure</p>
 
           {/* Title */}
           <h2
@@ -103,7 +103,7 @@ export default function CTASection({
           {/* Prefer to call micro-CTA */}
           <p className={cn('text-sm mb-8', dark ? 'text-gray-500' : 'text-gray-500')}>
             Prefer to talk first?{' '}
-            <a href={PHONE_HREF} className="text-gold font-semibold hover:underline" onClick={() => gtagReportCallConversion(PHONE_HREF)}>
+            <a href={PHONE_HREF} className={cn('font-semibold hover:underline', dark ? 'text-gold' : 'text-gold-ink')} onClick={() => gtagReportCallConversion(PHONE_HREF)}>
               Call us directly
             </a>{' '}
             we are ready to help.
@@ -116,7 +116,7 @@ export default function CTASection({
                 key={t}
                 className={cn('flex items-center gap-1.5 text-sm font-medium', dark ? 'text-gray-500' : 'text-gray-500')}
               >
-                <span className="text-gold font-bold">✓</span> {t}
+                <span className={dark ? 'text-gold font-bold' : 'text-gold-ink font-bold'}>✓</span> {t}
               </span>
             ))}
           </div>

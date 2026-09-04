@@ -64,7 +64,7 @@ export default function Reviews() {
                   <Star key={i} size={20} className="fill-gold text-gold" />
                 ))}
               </div>
-              <span className="text-sm font-semibold text-charcoal group-hover:text-gold transition-colors">
+              <span className="text-sm font-semibold text-charcoal group-hover:text-gold-ink transition-colors">
                 Verified reviews on Google
               </span>
               <ExternalLink size={15} className="text-gray-400 group-hover:text-gold transition-colors" />

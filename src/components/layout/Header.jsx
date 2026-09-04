@@ -103,8 +103,8 @@ export default function Header() {
                     className={cn(
                       'flex items-center gap-1 px-3 py-2 rounded-md text-sm font-semibold transition-colors',
                       isActive(link.href)
-                        ? 'text-gold'
-                        : 'text-charcoal hover:text-gold'
+                        ? 'text-gold-ink'
+                        : 'text-charcoal hover:text-gold-ink'
                     )}
                     aria-haspopup="true"
                     aria-expanded={servicesOpen}
@@ -127,8 +127,8 @@ export default function Header() {
                         className={cn(
                           'block px-4 py-2 text-sm font-medium transition-colors',
                           location.pathname === child.href
-                            ? 'text-gold bg-gold/5'
-                            : 'text-charcoal hover:text-gold hover:bg-gray-50'
+                            ? 'text-gold-ink bg-gold/5'
+                            : 'text-charcoal hover:text-gold-ink hover:bg-gray-50'
                         )}
                       >
                         {child.label}
@@ -137,7 +137,7 @@ export default function Header() {
                     <div className="border-t border-gray-100 mt-1.5 pt-1.5">
                       <Link
                         to="/services"
-                        className="block px-4 py-2 text-sm font-semibold text-gold hover:bg-gold/5 transition-colors"
+                        className="block px-4 py-2 text-sm font-semibold text-gold-ink hover:bg-gold/5 transition-colors"
                       >
                         View All Services →
                       </Link>
@@ -151,8 +151,8 @@ export default function Header() {
                   className={cn(
                     'relative px-3.5 py-2 text-sm font-semibold transition-colors duration-200',
                     isActive(link.href)
-                      ? 'text-gold'
-                      : 'text-charcoal/80 hover:text-gold'
+                      ? 'text-gold-ink'
+                      : 'text-charcoal/80 hover:text-gold-ink'
                   )}
                 >
                   {link.label}
@@ -168,7 +168,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href={PHONE_HREF}
-              className="flex items-center gap-2 text-charcoal/80 font-semibold text-sm hover:text-gold transition-colors duration-200"
+              className="flex items-center gap-2 text-charcoal/80 font-semibold text-sm hover:text-gold-ink transition-colors duration-200"
               onClick={() => gtagReportCallConversion(PHONE_HREF)}
             >
               <Phone size={15} />
@@ -211,7 +211,7 @@ export default function Header() {
                         <Link
                           key={child.href}
                           to={child.href}
-                          className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gold transition-colors"
+                          className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gold-ink transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -225,7 +225,7 @@ export default function Header() {
                   to={link.href}
                   className={cn(
                     'block px-3 py-2.5 rounded-md text-sm font-semibold transition-colors',
-                    isActive(link.href) ? 'text-gold bg-gold/5' : 'text-charcoal hover:bg-gray-50'
+                    isActive(link.href) ? 'text-gold-ink bg-gold/5' : 'text-charcoal hover:bg-gray-50'
                   )}
                 >
                   {link.label}

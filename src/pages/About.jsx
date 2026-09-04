@@ -104,7 +104,7 @@ export default function About() {
                   >
                     <div className={`flex-1 md:pr-8 ${i % 2 !== 0 ? 'md:pl-8 md:pr-0' : ''} pl-14 md:pl-0`}>
                       <div className="card">
-                        <div className="text-gold font-extrabold text-lg mb-1">{m.year}</div>
+                        <div className="text-gold-ink font-extrabold text-lg mb-1">{m.year}</div>
                         <p className="text-gray-600 text-sm leading-relaxed">{m.event}</p>
                       </div>
                     </div>

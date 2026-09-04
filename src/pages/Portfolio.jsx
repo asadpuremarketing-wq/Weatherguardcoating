@@ -127,7 +127,7 @@ export default function Portfolio() {
                     </div>
                     {/* Info */}
                     <div className="p-4">
-                      <h3 className="font-bold text-charcoal text-sm mb-1.5 group-hover:text-gold transition-colors">
+                      <h3 className="font-bold text-charcoal text-sm mb-1.5 group-hover:text-gold-ink transition-colors">
                         {item.title}
                       </h3>
                       <div className="flex items-center gap-3 text-gray-500 text-xs">

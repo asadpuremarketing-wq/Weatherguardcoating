@@ -129,7 +129,7 @@ export default function ThankYou() {
                     <Link
                       key={href}
                       to={href}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-charcoal border border-gray-200 rounded-xl px-5 py-2.5 hover:border-gold hover:text-gold transition-all duration-200 bg-white"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-charcoal border border-gray-200 rounded-xl px-5 py-2.5 hover:border-gold hover:text-gold-ink transition-all duration-200 bg-white"
                     >
                       <Icon size={15} />
                       {label}
