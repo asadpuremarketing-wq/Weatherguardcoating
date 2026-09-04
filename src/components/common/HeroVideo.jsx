@@ -34,7 +34,7 @@ export default function HeroVideo() {
     >
       {/* Thumbnail */}
       <img
-        src="/images/hero-video-thumbnail.jpg"
+        src="/images/hero-video-thumbnail.webp"
         alt="Weather Guard Coatings team at work"
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         fetchPriority="high"

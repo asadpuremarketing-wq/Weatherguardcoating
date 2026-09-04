@@ -66,7 +66,7 @@ export default function Blog() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   className={cn(
-                    'px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200',
+                    'px-4 py-3 rounded-full text-sm font-semibold transition-all duration-200',
                     activeCategory === cat
                       ? 'bg-gold text-white shadow-md'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -110,7 +110,7 @@ export default function Blog() {
 
                   {/* Content */}
                   <div className="p-5 flex flex-col flex-1">
-                    <div className="flex items-center gap-3 text-gray-400 text-xs mb-3">
+                    <div className="flex items-center gap-3 text-gray-500 text-xs mb-3">
                       <span className="flex items-center gap-1"><Calendar size={11} />{new Date(post.date).toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
                       <span className="flex items-center gap-1"><Clock size={11} />{post.readTime}</span>
                     </div>
@@ -126,7 +126,7 @@ export default function Blog() {
                       to={`/blog/${post.slug}`}
                       className="mt-4 inline-flex items-center gap-1.5 text-gold font-semibold text-sm hover:gap-2.5 transition-all duration-200"
                     >
-                      Read Article <ArrowRight size={14} />
+                      Read Article<span className="sr-only">: {post.title}</span> <ArrowRight size={14} />
                     </Link>
                   </div>
                 </motion.article>

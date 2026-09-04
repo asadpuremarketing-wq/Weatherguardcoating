@@ -77,7 +77,7 @@ export default function Portfolio() {
                   key={cat.id}
                   onClick={() => setFilter(cat.id)}
                   className={cn(
-                    'px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200',
+                    'px-4 py-3 rounded-full text-sm font-semibold transition-all duration-200',
                     activeFilter === cat.id
                       ? 'bg-gold text-white shadow-md'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -130,7 +130,7 @@ export default function Portfolio() {
                       <h3 className="font-bold text-charcoal text-sm mb-1.5 group-hover:text-gold transition-colors">
                         {item.title}
                       </h3>
-                      <div className="flex items-center gap-3 text-gray-400 text-xs">
+                      <div className="flex items-center gap-3 text-gray-500 text-xs">
                         <span className="flex items-center gap-1"><MapPin size={11} />{item.location}</span>
                         <span className="flex items-center gap-1"><Calendar size={11} />{item.year}</span>
                       </div>
@@ -175,7 +175,7 @@ export default function Portfolio() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-charcoal mb-2">{modalItem.title}</h3>
-                  <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
+                  <div className="flex items-center gap-4 text-gray-500 text-sm mb-3">
                     <span className="flex items-center gap-1"><MapPin size={13} />{modalItem.location}</span>
                     <span className="flex items-center gap-1"><Calendar size={13} />{modalItem.year}</span>
                   </div>

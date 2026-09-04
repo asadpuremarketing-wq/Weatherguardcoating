@@ -9,7 +9,7 @@ export const services = [
     shortDesc: 'Interior and exterior home painting that protects and beautifies your biggest investment.',
     fullDesc: 'Your home deserves expert care. We deliver premium interior and exterior residential painting with careful prep work, quality materials, and clean, professional execution every time.',
     icon: '🏠',
-    image: '/images/service-residential.jpg',
+    image: '/images/service-residential.webp',
     imageAlt: 'Freshly painted residential home exterior in London, Ontario',
     features: [
       'Interior & Exterior',
@@ -37,7 +37,7 @@ export const services = [
     shortDesc: 'Professional commercial painting that minimizes downtime and delivers lasting results.',
     fullDesc: 'We handle commercial projects of all sizes, from office buildings to retail spaces, with minimal disruption to your business operations. Night and weekend scheduling available.',
     icon: '🏢',
-    image: '/images/service-commercial.jpg',
+    image: '/images/service-commercial.webp',
     imageAlt: 'Painted commercial office building in London, Ontario',
     features: [
       'Day, Night & Weekend Scheduling',
@@ -65,7 +65,7 @@ export const services = [
     shortDesc: 'Durable coatings for barns, silos, outbuildings, and farm structures built to last.',
     fullDesc: 'Farming structures face harsh conditions year-round. Our agricultural coatings are chosen for maximum durability, UV resistance, and weatherproofing to protect your investment for years.',
     icon: '🌾',
-    image: '/images/service-farm.jpg',
+    image: '/images/service-farm.webp',
     imageAlt: 'Freshly coated barn and farm outbuilding in rural Ontario',
     features: [
       'Barn & Silo Painting',
@@ -93,7 +93,7 @@ export const services = [
     shortDesc: 'Extend your roof life and improve energy efficiency with professional roof coating systems.',
     fullDesc: 'Our elastomeric and reflective roof coatings protect flat and low-slope roofs from water infiltration, UV damage, and thermal expansion, extending roof life by 10 to 15 years.',
     icon: '🏗️',
-    image: '/images/service-roof.jpg',
+    image: '/images/service-roof.webp',
     imageAlt: 'Flat commercial roof with elastomeric coating applied',
     features: [
       'Flat & Low-Slope Roofs',

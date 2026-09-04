@@ -42,7 +42,7 @@ export default function TrustBar() {
               <div className="text-sm font-semibold text-charcoal/70">{label}</div>
 
               {/* Sub */}
-              <div className="text-xs text-gray-400 font-medium">{sub}</div>
+              <div className="text-xs text-gray-500 font-medium">{sub}</div>
             </motion.div>
           ))}
         </div>

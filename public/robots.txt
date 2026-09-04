@@ -4,5 +4,28 @@ Allow: /
 # Disallow post-conversion and utility pages
 Disallow: /thank-you
 
+# AI assistants and agentic browsers are welcome to read this site
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Sitemap location
 Sitemap: https://weatherguardcoating.ca/sitemap.xml
+
+# Plain-text site summary for LLMs / agentic browsers
+# https://llmstxt.org
+

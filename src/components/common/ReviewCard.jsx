@@ -27,11 +27,11 @@ export default function ReviewCard({ review, className }) {
           </div>
           <div>
             <p className="font-bold text-charcoal text-sm leading-tight">{name}</p>
-            <p className="text-gray-400 text-xs mt-0.5 font-medium">{location}</p>
+            <p className="text-gray-500 text-xs mt-0.5 font-medium">{location}</p>
           </div>
         </div>
         {/* Source badge */}
-        <span className="text-[11px] text-gray-400 bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-full font-semibold shrink-0 tracking-wide">
+        <span className="text-[11px] text-gray-500 bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-full font-semibold shrink-0 tracking-wide">
           {source}
         </span>
       </div>
@@ -45,7 +45,7 @@ export default function ReviewCard({ review, className }) {
             className={i < rating ? 'fill-gold text-gold' : 'text-gray-200 fill-gray-200'}
           />
         ))}
-        <span className="text-xs text-gray-400 ml-2 font-medium">{date}</span>
+        <span className="text-xs text-gray-500 ml-2 font-medium">{date}</span>
       </div>
 
       {/* ── Quote text ── */}

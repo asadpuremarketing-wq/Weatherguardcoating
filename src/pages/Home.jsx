@@ -28,12 +28,12 @@ export default function Home() {
         <meta property="og:title" content="Painting Contractor London Ontario | Weather Guard Coating" />
         <meta property="og:description" content="Trusted painting contractor in London, Ontario since 1989. Residential, commercial, farm & roof coating." />
         <meta property="og:url" content={`${BASE_URL}/`} />
-        <meta property="og:image" content={`${BASE_URL}/images/hero-video-thumbnail.jpg`} />
+        <meta property="og:image" content={`${BASE_URL}/images/hero-video-thumbnail.webp`} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Painting Contractor London Ontario | Weather Guard Coating" />
         <meta name="twitter:description" content="London Ontario's trusted painting contractor since 1989. Free estimates." />
-        <meta name="twitter:image" content={`${BASE_URL}/images/hero-video-thumbnail.jpg`} />
+        <meta name="twitter:image" content={`${BASE_URL}/images/hero-video-thumbnail.webp`} />
       </Helmet>
 
       {/* LocalBusiness + PaintingContractor structured data */}

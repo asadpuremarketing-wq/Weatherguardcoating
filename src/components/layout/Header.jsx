@@ -181,7 +181,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 rounded-md text-charcoal hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-3 -mr-1 rounded-md text-charcoal hover:bg-gray-100 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
@@ -199,7 +199,7 @@ export default function Header() {
               link.children ? (
                 <div key={link.label}>
                   <button
-                    className="w-full flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-semibold text-charcoal hover:bg-gray-50"
+                    className="w-full flex items-center justify-between px-3 py-3.5 rounded-md text-sm font-semibold text-charcoal hover:bg-gray-50"
                     onClick={() => setServicesOpen(!servicesOpen)}
                   >
                     {link.label}

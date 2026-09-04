@@ -12,7 +12,7 @@ export default function ArticleSchema({ post }) {
     headline: post.title,
     description: post.excerpt,
     url: `https://weatherguardcoating.ca/blog/${post.slug}`,
-    image: post.image ? `https://weatherguardcoating.ca${post.image}` : `https://weatherguardcoating.ca/images/hero-video-thumbnail.jpg`,
+    image: post.image ? `https://weatherguardcoating.ca${post.image}` : `https://weatherguardcoating.ca/images/hero-video-thumbnail.webp`,
     datePublished: post.date,
     dateModified: post.updatedDate || post.date,
     author: {

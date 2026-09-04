@@ -107,7 +107,7 @@ export default function BeforeAfterCard({ item }) {
             <span className="badge-dark shrink-0 capitalize text-[10px]">{category}</span>
           )}
         </div>
-        <p className="text-gray-400 text-xs font-medium mb-1.5">{location}</p>
+        <p className="text-gray-500 text-xs font-medium mb-1.5">{location}</p>
         {resultLine ? (
           <p className="text-emerald-700 text-xs font-semibold leading-snug">&#10003; {resultLine}</p>
         ) : description ? (

@@ -54,7 +54,7 @@ export default function LocalBusinessSchema() {
     foundingDate: BUSINESS.foundingYear,
     priceRange: BUSINESS.priceRange,
     logo: `${BUSINESS.url}/icon-512.png`,
-    image: `${BUSINESS.url}/images/hero-video-thumbnail.jpg`,
+    image: `${BUSINESS.url}/images/hero-video-thumbnail.webp`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: BUSINESS.address.street,

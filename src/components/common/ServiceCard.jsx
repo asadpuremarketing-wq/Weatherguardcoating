@@ -62,9 +62,8 @@ export default function ServiceCard({ service, className }) {
         <Link
           to={`/services/${slug}`}
           className="inline-flex items-center gap-1.5 text-gold font-bold text-sm group/link"
-          aria-label={`Learn more about ${title}`}
         >
-          Learn More
+          Learn More<span className="sr-only"> about {title}</span>
           <ArrowRight size={14} className="transition-transform duration-200 group-hover/link:translate-x-1" />
         </Link>
       </div>

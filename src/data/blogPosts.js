@@ -12,7 +12,7 @@ export const blogPosts = [
     author: 'Weather Guard Coating',
     category: 'Residential',
     readTime: '6 min read',
-    image: '/images/service-residential.jpg',
+    image: '/images/service-residential.webp',
     keywords: ['house painting cost London Ontario', 'painting contractor price London ON', 'exterior painting cost Ontario', 'interior painting price London'],
     content: `
 ## How Much Does House Painting Cost in London, Ontario? (2025 Guide)
@@ -139,7 +139,7 @@ We serve all of London and surrounding areas including St. Thomas, Strathroy, Wo
     author: 'Weather Guard Coating',
     category: 'Residential',
     readTime: '5 min read',
-    image: '/images/service-residential.jpg',
+    image: '/images/service-residential.webp',
     keywords: ['best time to paint exterior Ontario', 'exterior painting season Ontario', 'when to paint house exterior London ON', 'winter painting Ontario'],
     content: `
 ## Best Time of Year to Paint Your Home's Exterior in Ontario
@@ -222,7 +222,7 @@ Weather Guard Coating handles exterior projects throughout London, ON and surrou
     author: 'Weather Guard Coating',
     category: 'Commercial',
     readTime: '7 min read',
-    image: '/images/service-commercial.jpg',
+    image: '/images/service-commercial.webp',
     keywords: ['commercial painting London Ontario', 'office painting London ON', 'commercial painter London Ontario', 'commercial painting contractor Ontario'],
     content: `
 ## Commercial Painting in London, Ontario: What Business Owners Need to Know
@@ -340,7 +340,7 @@ We've handled commercial projects in London, Ontario since 1995, from small offi
     author: 'Weather Guard Coating',
     category: 'Agricultural',
     readTime: '6 min read',
-    image: '/images/service-farm.jpg',
+    image: '/images/service-farm.webp',
     keywords: ['barn painting Ontario', 'farm painting London Ontario', 'agricultural painting Ontario', 'barn coating Ontario winters', 'silo painting Ontario'],
     content: `
 ## Barn & Farm Painting That Survives Ontario Winters, What You Need to Know
@@ -458,7 +458,7 @@ We've been painting agricultural structures across London, Strathroy, Woodstock,
     author: 'Weather Guard Coating',
     category: 'Roof Coating',
     readTime: '7 min read',
-    image: '/images/service-roof.jpg',
+    image: '/images/service-roof.webp',
     keywords: ['flat roof coating London Ontario', 'roof coating vs replacement London ON', 'roof coating cost Ontario', 'flat roof repair London Ontario', 'elastomeric roof coating Ontario'],
     content: `
 ## Flat Roof Coating vs. Replacement in London, Ontario: What's Worth It?
@@ -579,7 +579,7 @@ We serve London, ON and all surrounding commercial and industrial properties wit
     author: 'Weather Guard Coating',
     category: 'Tips',
     readTime: '8 min read',
-    image: '/images/service-residential.jpg',
+    image: '/images/service-residential.webp',
     keywords: ['how to choose painting contractor London Ontario', 'best painting contractor London ON', 'painting company London Ontario', 'hiring painter London Ontario checklist'],
     content: `
 ## How to Choose a Painting Contractor in London, Ontario (Complete Checklist)
