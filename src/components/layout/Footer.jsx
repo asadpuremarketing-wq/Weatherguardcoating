@@ -191,14 +191,14 @@ export default function Footer() {
             <span>Licensed &amp; Insured</span>
             <span>•</span>
             <span>
-              Website by{' '}
+              Built and Managed by{' '}
               <a
                 href="https://www.puremarketing.ca/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gold hover:text-gold-light transition-colors font-semibold"
               >
-                Pure Marketing &amp; Advertising
+                Pure Marketing
               </a>
             </span>
           </div>
