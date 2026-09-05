@@ -68,14 +68,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-                <span className="text-white font-extrabold text-lg">WG</span>
-              </div>
-              <div>
-                <div className="font-extrabold text-white text-base leading-tight">Weather Guard</div>
-                <div className="text-xs text-gray-400 font-medium tracking-wide">Coatings</div>
-              </div>
+            <Link to="/" className="inline-flex items-center mb-4">
+              <img
+                src="/images/logo.png"
+                alt="Weather Guard Coatings"
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
               Serving Southwestern Ontario for over 35 years. Professional painting and coatings for residential, commercial, farm, and industrial properties.

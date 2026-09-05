@@ -87,14 +87,12 @@ export default function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-[4.25rem]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="Weather Guard Coatings Home">
-            <div className="w-10 h-10 bg-charcoal rounded-xl flex items-center justify-center shadow-xs">
-              <span className="text-gold font-black text-base leading-none tracking-tight">WG</span>
-            </div>
-            <div className="leading-tight">
-              <div className="font-extrabold text-charcoal text-[0.95rem] leading-tight tracking-tight">Weather Guard</div>
-              <div className="text-[0.7rem] text-gray-400 font-semibold tracking-widest uppercase leading-tight">Coatings</div>
-            </div>
+          <Link to="/" className="flex items-center shrink-0" aria-label="Weather Guard Coatings Home">
+            <img
+              src="/images/logo.png"
+              alt="Weather Guard Coatings"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop nav */}
