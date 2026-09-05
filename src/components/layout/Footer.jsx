@@ -72,7 +72,7 @@ export default function Footer() {
               <img
                 src="/images/logo.png"
                 alt="Weather Guard Coatings"
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
