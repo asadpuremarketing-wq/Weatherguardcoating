@@ -1,5 +1,5 @@
 /**
- * Google Ads conversion helpers (AW-313955898)
+ * Google Ads (AW-313955898) + Meta Pixel (1625169429327360) conversion helpers.
  * Import these functions wherever a tracked event should fire.
  */
 
@@ -9,6 +9,10 @@
  * @param {string} [url] - optional URL to navigate to after the event
  */
 export function gtagReportCallConversion(url) {
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'Contact');
+  }
+
   const callback = function () {
     if (typeof url !== 'undefined') {
       window.location = url;
@@ -35,6 +39,10 @@ export function gtagReportCallConversion(url) {
  * @param {Function} [onDone] - optional callback fired after gtag confirms the hit
  */
 export function gtagReportFormConversion(onDone) {
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'Lead');
+  }
+
   const callback = typeof onDone === 'function' ? onDone : function () {};
 
   if (typeof window.gtag === 'function') {
