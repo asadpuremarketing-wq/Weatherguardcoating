@@ -31,7 +31,7 @@ const serviceOptions = [
   { value: 'farm', label: 'Farm & Agricultural Painting' },
   { value: 'barn-farm', label: 'Custom Barn & Farm Painting' },
   { value: 'roof-coating', label: 'Roof Coating' },
-  { value: 'rubber-sealing', label: 'Hot Pour Rubber Sealing' },
+  { value: 'grain-bin-sealing', label: 'Grain Bin Base Sealing' },
   { value: 'other', label: 'Other / Not Sure Yet' },
 ];
 

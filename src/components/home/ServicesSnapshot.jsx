@@ -13,7 +13,7 @@ const benefitDescs = {
   'farm-painting':                 'Durable coatings for barns, silos, and farm structures built to outlast harsh Ontario winters.',
   'custom-barn-farm-painting':     'A coating system specified for your exact barn or outbuilding, not a one-size-fits-all default.',
   'roof-coating':                  'Stop leaks, cut cooling costs, and extend your roof life, at a fraction of replacement cost.',
-  'hot-pour-rubber-sealing':       'Seal driveway and parking lot cracks before winter turns them into costly repairs.',
+  'grain-bin-base-sealing':        'Protect stored grain from moisture and pests with a properly sealed bin foundation.',
 };
 
 // Attach benefit descriptions to service objects for this section

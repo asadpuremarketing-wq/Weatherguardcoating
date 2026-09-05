@@ -19,7 +19,7 @@ const navLinks = [
       { label: 'Farm Painting', href: '/services/farm-painting' },
       { label: 'Custom Barn & Farm Painting', href: '/services/custom-barn-farm-painting' },
       { label: 'Roof Coating', href: '/services/roof-coating' },
-      { label: 'Hot Pour Rubber Sealing', href: '/services/hot-pour-rubber-sealing' },
+      { label: 'Grain Bin Base Sealing', href: '/services/grain-bin-base-sealing' },
     ],
   },
   { label: 'Portfolio', href: '/portfolio' },

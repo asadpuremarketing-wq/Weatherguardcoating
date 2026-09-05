@@ -96,7 +96,7 @@ export default function LocalBusinessSchema() {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Farm & Agricultural Painting', url: `${BUSINESS.url}/services/farm-painting` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Barn & Farm Painting', url: `${BUSINESS.url}/services/custom-barn-farm-painting` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Roof Coating', url: `${BUSINESS.url}/services/roof-coating` } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Hot Pour Rubber Sealing', url: `${BUSINESS.url}/services/hot-pour-rubber-sealing` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Grain Bin Base Sealing', url: `${BUSINESS.url}/services/grain-bin-base-sealing` } },
       ],
     },
     sameAs: [

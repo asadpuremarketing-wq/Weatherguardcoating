@@ -12,7 +12,7 @@ const SERVICE_LABELS = {
   farm: 'Farm & Agricultural Painting',
   'barn-farm': 'Custom Barn & Farm Painting',
   'roof-coating': 'Roof Coating',
-  'rubber-sealing': 'Hot Pour Rubber Sealing',
+  'grain-bin-sealing': 'Grain Bin Base Sealing',
   other: 'Other / Not Sure Yet',
 };
 
